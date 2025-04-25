@@ -1,6 +1,28 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Hero, HeroContent, HeroImage } from "@/components/ui/hero";
-import { boardTrustees, committeeTrustees } from "@/data/trustees";
+import {
+  boardTrustees,
+  committeeTrustees,
+  type Trustee,
+} from "@/data/trustees";
+
+const TrusteeCard = ({ trustee }: { trustee: Trustee }) => {
+  return (
+    <div className="text-center flex flex-col items-center">
+      <Avatar className="size-52 border mb-4 text-6xl">
+        <AvatarFallback>
+          {trustee.name.split(" ")[0][0] + trustee.name.split(" ")[1][0]}
+        </AvatarFallback>
+        <AvatarImage src={trustee.image} />
+      </Avatar>
+      <p className="text-lg font-medium -mb-0.5">{trustee.name}</p>
+      <p className="mb-1 text-sm">{trustee.role}</p>
+      {trustee.mail && (
+        <p className="text-muted-foreground text-sm">{`${trustee.mail}`}</p>
+      )}
+    </div>
+  );
+};
 
 const TrusteesPage = () => {
   return (
@@ -23,20 +45,7 @@ const TrusteesPage = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
         {boardTrustees.map((trustee, index) => (
-          <div
-            className="text-center flex flex-col items-center"
-            key={`board.trustee.${index}`}
-          >
-            <Avatar className="size-52 border mb-4 text-6xl">
-              <AvatarFallback>
-                {trustee.name.split(" ")[0][0] + trustee.name.split(" ")[1][0]}
-              </AvatarFallback>
-              <AvatarImage src={trustee.image} />
-            </Avatar>
-            <p className="text-lg font-medium -mb-0.5">{trustee.name}</p>
-            <p className="mb-1 text-sm">{trustee.role}</p>
-            <p className="text-muted-foreground text-sm">{`${trustee.mail}@kth.it`}</p>
-          </div>
+          <TrusteeCard key={`board.trustee.${index}`} trustee={trustee} />
         ))}
       </div>
       <h3 className="text-lg font-medium">Committee Representatives</h3>
@@ -45,20 +54,7 @@ const TrusteesPage = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         {committeeTrustees.map((trustee, index) => (
-          <div
-            className="text-center flex flex-col items-center"
-            key={`committee.trustee.${index}`}
-          >
-            <Avatar className="size-52 border mb-4 text-6xl">
-              <AvatarFallback>
-                {trustee.name.split(" ")[0][0] + trustee.name.split(" ")[1][0]}
-              </AvatarFallback>
-              <AvatarImage src={trustee.image} />
-            </Avatar>
-            <p className="text-lg font-medium -mb-0.5">{trustee.name}</p>
-            <p className="mb-1 text-sm">{trustee.role}</p>
-            <p className="text-muted-foreground text-sm">{`${trustee.mail}@kth.it`}</p>
-          </div>
+          <TrusteeCard key={`board.trustee.${index}`} trustee={trustee} />
         ))}
       </div>
     </div>

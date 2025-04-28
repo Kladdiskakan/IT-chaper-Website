@@ -1,3 +1,4 @@
+// import { EventCard } from "@/components/event-card";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Hero, HeroContent, HeroImage } from "@/components/ui/hero";
-import { FacebookScraper } from "@/lib/scrapers/facebook";
+// import { FacebookScraper } from "@/lib/scrapers/facebook";
 import {
   ArrowRightIcon,
   ExternalLinkIcon,
@@ -21,7 +22,7 @@ import Link from "next/link";
 export const revalidate = 86400;
 
 export default async function Home() {
-  const scraper = new FacebookScraper();
+  // const scraper = new FacebookScraper();
   // const chapterEvents = await scraper.listEvents("itsektionenkth");
 
   return (
@@ -40,7 +41,7 @@ export default async function Home() {
         <HeroImage src="/assets/img/header.avif" alt="Header Image" />
       </Hero>
 
-      <section className="flex flex-col md:flex-row gap-4 [&>div]:grow [&>div]:w-full -mt-11 mb-14">
+      <section className="flex flex-col md:flex-row gap-4 [&>div]:grow [&>div]:w-full -mt-11 mb-14 [&>div]:z-5">
         <Card>
           <CardHeader>
             <CardTitle>

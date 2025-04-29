@@ -32,7 +32,7 @@ jobs:
       - run: vercel pull --yes --token=${{ secrets.VERCEL_ACCOUNT_TOKEN }} --scope ${{ secret.VERCEL_ORG_ID }}
 
       - name: Build
-        run: vercel build --target=dev --token=${{ secrets.VERCEL_ACCOUNT_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }}
+        run: vercel build --token=${{ secrets.VERCEL_ACCOUNT_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }}
 
       - name: Deploy
-        run: vercel deploy --target=dev --prebuilt --token=${{ secrets.VERCEL_ACCOUNT_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }}
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_ACCOUNT_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }}

@@ -29,6 +29,8 @@ jobs:
       - name: Install Vercel
         run: pnpm install -g vercel@latest
 
+      - run: vercel pull --yes
+
       - name: Build
         run: vercel build --token=${{ secrets.VERCEL_ACCOUNT_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }}
 

@@ -33,7 +33,7 @@ jobs:
       - run: vercel pull --yes --token=${{ secrets.VERCEL_ACCOUNT_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }}
 
       - name: Build
-        run: vercel build --token=${{ secrets.VERCEL_ACCOUNT_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }}
+        run: vercel build --prod --token=${{ secrets.VERCEL_ACCOUNT_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }}
 
       # Since we can not create custom Vercel environments we use production as dev deployment until site is finished.
       - name: Deploy

@@ -1,10 +1,4 @@
-import {
-  BriefcaseBusiness,
-  BriefcaseBusinessIcon,
-  MailboxIcon,
-  MailIcon,
-  MapPinIcon,
-} from "lucide-react";
+import { BriefcaseBusinessIcon, MailIcon, MapPinIcon } from "lucide-react";
 import Link from "next/link";
 import { documentItems } from "./nav-items";
 

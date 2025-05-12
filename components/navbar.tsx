@@ -2,6 +2,12 @@
 
 import { ItBolt } from "@/components/it-bolt";
 import { ItChip } from "@/components/it-chip";
+import {
+  chapterItems,
+  documentItems,
+  educationItems,
+  navigationGroups,
+} from "@/components/nav-items";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   Drawer,
@@ -28,12 +34,6 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import {
-  educationItems,
-  chapterItems,
-  documentItems,
-  navigationGroups,
-} from "./nav-items";
 
 const DesktopNavbar = () => {
   return (
@@ -97,9 +97,7 @@ const DesktopNavbar = () => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="ml-auto">
-          <ThemeToggle />
-        </div>
+        <ThemeToggle className="ml-auto" />
       </div>
     </header>
   );

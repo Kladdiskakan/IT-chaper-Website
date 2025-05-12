@@ -1,7 +1,9 @@
+import { CommandMenu } from "@/components/cmd-menu";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { TRPCProvider } from "@/components/providers/trpc-provider";
+import { VimNavigation } from "@/components/vim-navigation";
 import type { Metadata } from "next";
 import { Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
@@ -44,6 +46,8 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <CommandMenu />
+            <VimNavigation />
           </ThemeProvider>
         </TRPCProvider>
       </body>

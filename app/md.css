@@ -1,0 +1,21 @@
+@import "./globals.css";
+
+.md {
+    h2 {
+        font-size: var(--text-3xl);
+        margin-bottom: var(--spacing);
+        font-weight: var(--font-weight-medium);
+    }
+
+    p {
+        margin-bottom: calc(var(--spacing) * 4);
+    }
+
+    a {
+        color: var(--color-primary);
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+    }
+}

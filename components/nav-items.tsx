@@ -7,6 +7,7 @@ import {
   ScrollIcon,
   UsersIcon,
 } from "lucide-react";
+import { ItChip } from "./it-chip";
 
 export type NavigationItem = {
   title: string;
@@ -40,6 +41,13 @@ export const educationItems: NavigationItem[] = [
 ];
 
 export const chapterItems: NavigationItem[] = [
+  {
+    title: "About",
+    href: "/chapter",
+    icon: <ItChip primary="var(--muted-foreground)" />,
+    description:
+      "We are the Chapter for Information technology, one of the largest chapters under the THS Student Union at KTH in Stockholm.",
+  },
   {
     title: "Committees",
     href: "/committees",

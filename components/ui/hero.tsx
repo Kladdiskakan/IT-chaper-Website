@@ -28,11 +28,11 @@ export const HeroTitle = ({
   className?: string;
 }) => {
   return (
-    <h2
+    <h1
       className={cn("text-4xl sm:text-6xl font-medium text-white", className)}
     >
       {children}
-    </h2>
+    </h1>
   );
 };
 

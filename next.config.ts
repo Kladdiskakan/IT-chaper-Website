@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  pageExtensions: ["mdx", "tsx", "ts", "jsx", "js"],
+  pageExtensions: ["mdx", "md", "tsx", "ts", "jsx", "js"],
 };
 
 const withMDX = createMDX({

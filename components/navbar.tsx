@@ -23,6 +23,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import {
@@ -30,12 +31,27 @@ import {
   FileTextIcon,
   GraduationCapIcon,
   HouseIcon,
+  SearchIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { Button } from "./ui/button";
 
 const DesktopNavbar = () => {
+  const triggerCmdK = () => {
+    console.log("hey");
+    const event = new KeyboardEvent("keydown", {
+      key: "k",
+      code: "KeyK",
+      metaKey: true,
+      bubbles: true,
+      cancelable: true,
+    });
+
+    document.dispatchEvent(event);
+  };
+
   return (
     <header className="hidden sm:block sticky z-50 top-0 border-b bg-background/90 backdrop-blur">
       <div className="container mx-auto px-6 h-16 border-x flex items-center gap-4">
@@ -95,9 +111,30 @@ const DesktopNavbar = () => {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                className={cn(navigationMenuTriggerStyle())}
+                asChild
+              >
+                <Link href="/contact" passHref>
+                  Contact
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <ThemeToggle className="ml-auto" />
+        <Button
+          onClick={triggerCmdK}
+          variant={"outline"}
+          className="ml-auto cursor-pointer hidden md:flex lg:w-[260px] !pr-2 text-muted-foreground justify-start hover:!bg-muted group !bg-transparent shadow-none"
+        >
+          <SearchIcon />
+          Search...
+          <kbd className="ml-auto pointer-events-none group-hover:border-transparent inline-flex h-5 select-none items-center gap-1 rounded-xs border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+            <span className="text-xs">⌘</span>K
+          </kbd>
+        </Button>
+        <ThemeToggle />
       </div>
     </header>
   );
@@ -148,6 +185,9 @@ const MobileNavbar = () => {
                 </ul>
               </div>
             ))}
+            <Link href={"/contact"} className="font-medium mb-4 block w-fit">
+              Contact
+            </Link>
             <ThemeToggle />
           </div>
         </DrawerContent>

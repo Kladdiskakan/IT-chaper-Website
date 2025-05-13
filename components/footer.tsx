@@ -15,7 +15,7 @@ const Footer = () => {
               <li className="flex items-center gap-1.5 [&>svg]:size-4 [&>svg]:text-muted-foreground">
                 <MailIcon />
                 <Link
-                  className="underline underline-offset-4"
+                  className="hover:underline underline-offset-4"
                   href="mailto:board@kth.it"
                 >
                   board@kth.it
@@ -28,6 +28,12 @@ const Footer = () => {
               <li className="flex items-center gap-1.5 [&>svg]:size-4 [&>svg]:text-muted-foreground">
                 <BriefcaseBusinessIcon /> 802431-2442
               </li>
+              <Link
+                className="text-muted-foreground hover:underline underline-offset-4"
+                href="/contact"
+              >
+                ...more
+              </Link>
             </ul>
           </div>
           <div>

@@ -83,25 +83,6 @@ export const listAllMeetings = async () => {
   // Create a map to store meetings by year
   const meetingsByYear = new Map<string, YearEntry>();
 
-  // Process board meetings
-  for (const meeting of boardMeetings) {
-    if (!meetingsByYear.has(meeting.year)) {
-      meetingsByYear.set(meeting.year, {
-        year: meeting.year,
-        id: meeting.id,
-        files: [],
-      });
-    }
-
-    const yearEntry = meetingsByYear.get(meeting.year);
-    yearEntry?.files?.push(
-      ...meeting.files!.map((file) => ({
-        ...file,
-        type: "board",
-      })),
-    );
-  }
-
   // Process chapter meetings
   for (const meeting of chapterMeetings) {
     if (!meetingsByYear.has(meeting.year)) {
@@ -117,6 +98,25 @@ export const listAllMeetings = async () => {
       ...meeting.files!.map((file) => ({
         ...file,
         type: "chapter",
+      })),
+    );
+  }
+
+  // Process board meetings
+  for (const meeting of boardMeetings) {
+    if (!meetingsByYear.has(meeting.year)) {
+      meetingsByYear.set(meeting.year, {
+        year: meeting.year,
+        id: meeting.id,
+        files: [],
+      });
+    }
+
+    const yearEntry = meetingsByYear.get(meeting.year);
+    yearEntry?.files?.push(
+      ...meeting.files!.map((file) => ({
+        ...file,
+        type: "board",
       })),
     );
   }

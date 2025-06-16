@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const NotFoundPage = () => {
   return (
-    <div>
-      <Hero className="-mb-6 h-[800px]">
+    <div className="container mx-auto border-x h-screen mt-6">
+      <Hero className="w-full mx-0 h-full border-0">
         <HeroContent className="text-white">
           <HeroTitle className="mb-2">404!</HeroTitle>
           <p className="text-lg mb-4">
@@ -16,7 +16,7 @@ const NotFoundPage = () => {
           </Button>
         </HeroContent>
         <HeroImage
-          className="h-[800px]"
+          className="h-full"
           alt="Not found"
           src="/assets/img/obi-wan.avif"
         />

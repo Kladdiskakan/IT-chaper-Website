@@ -20,6 +20,10 @@ export default {
           "Utöver studiebevakning arrangerar sektionen en uppsjö med aktiviteter utanför studierna så som pubar, brädspelskvällar, idrottsevenemang och LAN.",
       },
     },
+    News: {
+      title: "Senaste nytt",
+      "no-news": "Det finns inga nyheter.",
+    },
   },
   Statutes: {
     title: "Stadgar",
@@ -27,6 +31,7 @@ export default {
     toc: "Innehåll",
   },
   NavBar: {
+    Home: "Hem",
     Education: "Utbildning",
     Chapter: "Sektionen",
     Documents: "Dokument",
@@ -39,5 +44,6 @@ export default {
   },
   Common: {
     "read-more": "Läs mer",
+    chapter: "IT-Sektionen",
   },
 } as const;

@@ -1,10 +1,7 @@
-import { CommandMenu } from "@/components/cmd-menu";
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
-import { VimNavigation } from "@/components/vim-navigation";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { TRPCProvider } from "@/components/providers/trpc-provider";
 import type { Metadata } from "next";
 import { Geist_Mono, Poppins } from "next/font/google";
-import { I18nProviderClient } from "../../locales/client";
 
 import "@/app/globals.css";
 import { getI18n } from "@/locales/server";
@@ -30,23 +27,25 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({
-  params,
   children,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params;
-
   return (
-    <I18nProviderClient locale={locale}>
-      <Navbar />
-      <main className="container mx-auto p-6 sm:border-x pb-42">
-        {children}
-      </main>
-      <Footer />
-      <CommandMenu />
-      <VimNavigation />
-    </I18nProviderClient>
+    <html suppressHydrationWarning>
+      <body className={`${poppins.variable} ${geistMono.variable} antialiased`}>
+        <TRPCProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            storageKey="theme-kthit"
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </TRPCProvider>
+      </body>
+    </html>
   );
 }

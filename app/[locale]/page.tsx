@@ -15,6 +15,7 @@ import {
   ArrowRightIcon,
   ExternalLinkIcon,
   GraduationCapIcon,
+  PartyPopperIcon,
   SchoolIcon,
   ZapIcon,
 } from "lucide-react";
@@ -116,12 +117,17 @@ export default async function Home({
       </section>
 
       <section>
-        <h2 className="text-2xl font-medium mb-3">Upcoming events</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {/* {chapterEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))} */}
+        <h2 className="text-2xl font-medium mb-4 flex items-center gap-3">
+          <PartyPopperIcon className="text-primary size-6" /> {t("News.title")}
+        </h2>
+        <div className="bg-card p-8 flex h-[300px] items-center justify-center text-center border rounded-md">
+          <p className="text-muted-foreground">{t("News.no-news")}</p>
         </div>
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {chapterEvents.map((event) => (
+            <EventCard key={event.id} event={event} />
+          ))}
+        </div> */}
       </section>
     </>
   );

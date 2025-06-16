@@ -20,6 +20,10 @@ export default {
           "Aside from study quality assurance, the chapter provides a plethora of extracurricular activities such as pubs, board game nights, sports events and LAN parties.",
       },
     },
+    News: {
+      title: "Latest news",
+      "no-news": "There are no news.",
+    },
   },
   Statutes: {
     title: "Statutes",
@@ -28,6 +32,7 @@ export default {
     toc: "Table of Contents",
   },
   NavBar: {
+    Home: "Home",
     Education: "Education",
     Chapter: "Chapter",
     Documents: "Documents",
@@ -40,5 +45,6 @@ export default {
   },
   Common: {
     "read-more": "Read more",
+    chapter: "The IT Chapter",
   },
 } as const;

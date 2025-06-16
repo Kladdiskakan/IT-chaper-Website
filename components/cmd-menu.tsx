@@ -11,6 +11,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
+import { useI18n } from "@/locales/client";
 import {
   ContactIcon,
   HomeIcon,
@@ -25,6 +26,7 @@ import { navigationGroups } from "./nav-items";
 const CommandMenu = () => {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
+  const t = useI18n();
 
   const { setTheme } = useTheme();
 
@@ -53,22 +55,22 @@ const CommandMenu = () => {
   return (
     <>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search..." />
+        <CommandInput placeholder={`${t("NavBar.Search")}...`} />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup>
             <CommandItem onSelect={() => handleNavigation("/")}>
-              <HomeIcon /> Home
+              <HomeIcon /> {t("NavBar.Home")}
             </CommandItem>
             <CommandItem onSelect={() => handleNavigation("/contact")}>
-              <ContactIcon /> Contact
+              <ContactIcon /> {t("NavBar.Contact")}
             </CommandItem>
           </CommandGroup>
           {navigationGroups.map((group, i) => (
             <React.Fragment key={`cmd.group.${group.title}.${i}.fragment`}>
               <CommandGroup
                 key={`cmd.group.${group.title}.${i}`}
-                heading={group.title}
+                heading={t(`NavBar.${group.title}`)}
               >
                 {group.items.map((item, j) => (
                   <CommandItem

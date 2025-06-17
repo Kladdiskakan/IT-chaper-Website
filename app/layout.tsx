@@ -26,7 +26,7 @@ export default async function RootLayout({
         <TRPCProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="system"
             enableSystem
             storageKey="theme-kthit"
             disableTransitionOnChange

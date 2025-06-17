@@ -49,7 +49,7 @@ const EducationPage = async () => {
         </p>
         <div className="flex gap-2">
           <Button asChild>
-            <Link href="/education/programmes?p=CINTE">
+            <Link href="/education/courses?p=CINTE">
               {commonT("Common.read-more")}
             </Link>
           </Button>
@@ -80,7 +80,7 @@ const EducationPage = async () => {
         </p>
         <div className="flex gap-2">
           <Button asChild>
-            <Link href="/education/programmes?p=TIDAB">
+            <Link href="/education/courses?p=TIDAB">
               {commonT("Common.read-more")}
             </Link>
           </Button>
@@ -112,7 +112,7 @@ const EducationPage = async () => {
         </p>
         <div className="flex gap-2">
           <Button asChild>
-            <Link href="/education/programmes?p=TCOMK">
+            <Link href="/education/courses?p=TCOMK">
               {commonT("Common.read-more")}
             </Link>
           </Button>

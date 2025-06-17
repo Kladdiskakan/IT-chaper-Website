@@ -13,10 +13,19 @@ You will need:
 - [Node.js](https://nodejs.org/en)
 - [PNPM](https://pnpm.io/)
 
-To start the developing, simply:
-
 1. Clone this repository
 1. Install dependencies (`pnpm install`)
-1. Start the development server (`pnpm dev`)
+
+When you are ready, start the development server (`pnpm dev`)
 
 Happy hacking!
+
+### Caveats
+
+Due to [the i18n library we are using](https://next-international.vercel.app/) we have to do some workarounds to mark pages as static, which is why the seasoned Next.js developer might notice some seemingly weird code around the pages. See the [next-international docs](https://next-international.vercel.app/docs/app-static-rendering) for reference.
+
+## Content
+
+### Pages
+
+If you want to add a page, using [MDX](https://mdxjs.com/) should be sufficient for most use cases. To add a page, simply create a directory with your page name under `app/[locale]/` and create a file `page.mdx` in said directory. We also provide a script for quickly generating pages with the default layout which you can run with `pnpm generate:page [title]`.

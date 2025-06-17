@@ -38,8 +38,8 @@ export default async function Home({
 
   return (
     <>
-      <Hero className="grid grid-cols-2">
-        <HeroContent className="text-white p-6 sm:p-4">
+      <Hero className="md:grid grid-cols-2 text-center md:text-left">
+        <HeroContent className="text-white p-6 sm:p-4 flex md:flex-row gap-6">
           <div className="max-w-[32ch]">
             <p className="text-2xl font-medium mb-1 text-primary">
               {t("title")}

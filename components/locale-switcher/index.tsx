@@ -1,16 +1,11 @@
 "use client";
+import Image from "next/image";
 import {
   useChangeLocale,
   useCurrentLocale,
   useScopedI18n,
 } from "../../locales/client";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "../ui/select";
 
 const LocaleSwitcher = () => {
   const locale = useCurrentLocale();
@@ -18,8 +13,8 @@ const LocaleSwitcher = () => {
   const t = useScopedI18n("LocaleSwitcher");
 
   const flagMap: Record<typeof locale, string> = {
-    en: "🇬🇧",
-    sv: "🇸🇪",
+    en: "/assets/icons/en.svg",
+    sv: "/assets/icons/sv.svg",
   };
 
   const locales: (typeof locale)[] = ["en", "sv"];
@@ -30,12 +25,24 @@ const LocaleSwitcher = () => {
       defaultValue={locale}
     >
       <SelectTrigger className="border-0 shadow-none !bg-transparent hover:!bg-accent dark:hover:!bg-input/50 transition-colors">
-        <SelectValue />
+        <Image
+          className="rounded-xs w-4"
+          src={flagMap[locale]}
+          height={40}
+          width={30}
+          alt={`${locale.toUpperCase()} flag`}
+        />
       </SelectTrigger>
       <SelectContent>
         {locales.map((locale) => (
           <SelectItem key={`locale-switcher.${locale}`} value={locale}>
-            <p className="-mb-px text-lg">{flagMap[locale]}</p>
+            <Image
+              className="rounded-xs w-4"
+              src={flagMap[locale]}
+              height={40}
+              width={30}
+              alt={`${locale.toUpperCase()} flag`}
+            />
             {t(locale)}
           </SelectItem>
         ))}

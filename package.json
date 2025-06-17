@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:page": "tsx --tsconfig ./tsconfig.json ./scripts/generate-mdx-page.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -60,6 +61,7 @@
     "eslint-config-next": "15.3.0",
     "eslint-plugin-unicorn": "^58.0.0",
     "tailwindcss": "^4",
+    "tsx": "^4.20.3",
     "typescript": "^5"
   }
 }

@@ -1,11 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useIsMac } from "@/hooks/use-is-mac";
 import { useI18n } from "@/locales/client";
 import { SearchIcon } from "lucide-react";
 
 const Search = () => {
   const t = useI18n();
+  const isMac = useIsMac();
   const triggerCmdK = () => {
     const event = new KeyboardEvent("keydown", {
       key: "k",
@@ -27,7 +29,7 @@ const Search = () => {
       <SearchIcon />
       {t("NavBar.Search") + "..."}
       <kbd className="ml-auto pointer-events-none group-hover:border-transparent inline-flex h-5 select-none items-center gap-1 rounded-xs border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-        <span className="text-xs">⌘</span>K
+        {isMac ? <span className="text-xs">⌘</span> : "Ctrl "}K
       </kbd>
     </Button>
   );

@@ -1,8 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { listAllMeetings } from "@/lib/drive";
 import { getStaticParams } from "@/locales/server";
 import {
+  ChevronDownIcon,
   ExternalLinkIcon,
   FileQuestionIcon,
   FileTextIcon,
@@ -16,8 +22,9 @@ export const revalidate = 604800;
 
 const YearHeader = ({ year }: { year: string }) => {
   return (
-    <div className="border-b sm:border-y bg-muted/90 backdrop-blur z-0 flex sticky top-0 sm:top-16 px-6 py-3">
+    <div className="border-b sm:border-y bg-muted/90 backdrop-blur z-0 flex sticky top-0 sm:top-16 px-6 py-3 items-center justify-between">
       <p className="text-sm font-medium">{year}</p>
+      <ChevronDownIcon className="size-4 text-muted-foreground transition-transform" />
     </div>
   );
 };
@@ -49,44 +56,55 @@ const ProtocolsPage = async ({
         </p>
       </div>
       <section>
-        {allMeetings.map((meeting) => (
-          <div key={meeting.id}>
-            <YearHeader key={meeting.id} year={meeting.year!} />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-6 gap-4">
-              {meeting.files?.map((file) => (
-                <Card key={file.id} className="flex flex-row overflow-hidden">
-                  {file.hasThumbnail ? (
-                    <Image
-                      height={138}
-                      width={100}
-                      src={file.thumbnailLink!}
-                      alt={file.name!}
-                      className="w-25 border-r -my-6 -mr-6"
-                    />
-                  ) : (
-                    <div className="w-25 border-r -my-6 -mr-6 bg-muted p-3 flex items-center justify-center text-muted-foreground">
-                      {file.mimeType ===
-                      "application/vnd.google-apps.folder" ? (
-                        <FolderIcon />
-                      ) : (
-                        <FileQuestionIcon />
-                      )}
-                    </div>
-                  )}
-                  <CardHeader className="grow whitespace-pre-wrap break-all overflow-hidden">
-                    <CardTitle className="leading-5">
-                      {file.name!.split(".pdf")[0]}
-                    </CardTitle>
-                    <Button variant="secondary" className="mt-auto" asChild>
-                      <Link href={file.webViewLink!} target="_blank">
-                        View <ExternalLinkIcon />
-                      </Link>
-                    </Button>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </div>
+        {allMeetings.map((meeting, i) => (
+          <Collapsible
+            className="data-[state='open']:[&>*>svg]:rotate-180"
+            defaultOpen={i === 0}
+            key={meeting.id}
+          >
+            <CollapsibleTrigger asChild>
+              <YearHeader key={meeting.id} year={meeting.year!} />
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-6 gap-4">
+                {meeting.files?.map((file) => (
+                  <Card
+                    key={file.id}
+                    className="flex select-none flex-row overflow-hidden"
+                  >
+                    {file.hasThumbnail ? (
+                      <Image
+                        height={138}
+                        width={100}
+                        src={file.thumbnailLink!}
+                        alt={file.name!}
+                        className="w-25 border-r -my-6 -mr-6"
+                      />
+                    ) : (
+                      <div className="w-25 border-r -my-6 -mr-6 bg-muted p-3 flex items-center justify-center text-muted-foreground">
+                        {file.mimeType ===
+                        "application/vnd.google-apps.folder" ? (
+                          <FolderIcon />
+                        ) : (
+                          <FileQuestionIcon />
+                        )}
+                      </div>
+                    )}
+                    <CardHeader className="grow whitespace-pre-wrap break-all overflow-hidden">
+                      <CardTitle className="leading-5">
+                        {file.name!.split(".pdf")[0]}
+                      </CardTitle>
+                      <Button variant="secondary" className="mt-auto" asChild>
+                        <Link href={file.webViewLink!} target="_blank">
+                          View <ExternalLinkIcon />
+                        </Link>
+                      </Button>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
         ))}
       </section>
     </div>

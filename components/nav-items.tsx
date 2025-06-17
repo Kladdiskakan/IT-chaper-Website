@@ -88,7 +88,7 @@ export const documentItems: NavigationItem[] = [
   },
 ];
 
-export const navigationGroups: NavigationGroup[] = [
+export const navigationGroups = [
   {
     title: "Education",
     items: educationItems,
@@ -101,4 +101,6 @@ export const navigationGroups: NavigationGroup[] = [
     title: "Documents",
     items: documentItems,
   },
-];
+] as const;
+
+export type NavigationGroupTitle = (typeof navigationGroups)[number]["title"];

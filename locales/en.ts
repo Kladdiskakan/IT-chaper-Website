@@ -47,4 +47,7 @@ export default {
     "read-more": "Read more",
     chapter: "The IT Chapter",
   },
+  NotFound: {
+    cta: "Take me back!",
+  },
 } as const;

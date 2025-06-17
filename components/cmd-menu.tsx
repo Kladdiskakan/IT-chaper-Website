@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
-import { navigationGroups } from "./nav-items";
+import { navigationGroups, NavigationGroupTitle } from "./nav-items";
 
 const CommandMenu = () => {
   const [open, setOpen] = React.useState(false);
@@ -70,7 +70,7 @@ const CommandMenu = () => {
             <React.Fragment key={`cmd.group.${group.title}.${i}.fragment`}>
               <CommandGroup
                 key={`cmd.group.${group.title}.${i}`}
-                heading={t(`NavBar.${group.title}`)}
+                heading={t(`NavBar.${group.title as NavigationGroupTitle}`)}
               >
                 {group.items.map((item, j) => (
                   <CommandItem

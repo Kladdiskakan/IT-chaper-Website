@@ -46,4 +46,7 @@ export default {
     "read-more": "Läs mer",
     chapter: "IT-Sektionen",
   },
+  NotFound: {
+    cta: "Ta mig tillbaka!",
+  },
 } as const;

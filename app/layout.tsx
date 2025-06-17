@@ -1,10 +1,8 @@
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { TRPCProvider } from "@/components/providers/trpc-provider";
-import type { Metadata } from "next";
 import { Geist_Mono, Poppins } from "next/font/google";
 
 import "@/app/globals.css";
-import { getI18n } from "@/locales/server";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -16,15 +14,6 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getI18n();
-
-  return {
-    title: t("Common.chapter"),
-    description: "Sektionen för alla",
-  };
-}
 
 export default async function RootLayout({
   children,

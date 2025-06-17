@@ -1,18 +1,21 @@
-import { Button } from "@/components/ui/button";
-import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
-import Link from "next/link";
+import { getScopedI18n } from "@/locales/server";
 
-const NotFoundPage = () => {
+import Link from "next/link";
+import { Button } from "./ui/button";
+import { Hero, HeroContent, HeroImage, HeroTitle } from "./ui/hero";
+
+const NotFound = async () => {
+  const t = await getScopedI18n("NotFound");
   return (
-    <div className="container mx-auto border-x h-screen mt-6">
-      <Hero className="w-full mx-0 h-full border-0">
+    <div className="h-[calc(100dvh-4rem)] -mb-42">
+      <Hero className=" h-full border-0">
         <HeroContent className="text-white">
           <HeroTitle className="mb-2">404!</HeroTitle>
           <p className="text-lg mb-4">
             This is not the page you are looking for...
           </p>
           <Button asChild>
-            <Link href="/">Take me back!</Link>
+            <Link href="/">{t("cta")}</Link>
           </Button>
         </HeroContent>
         <HeroImage
@@ -25,4 +28,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default NotFoundPage;
+export { NotFound };

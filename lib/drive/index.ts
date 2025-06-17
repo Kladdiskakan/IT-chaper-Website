@@ -124,5 +124,5 @@ export const listAllMeetings = async () => {
   // Convert map to array
   const result = Array.from(meetingsByYear.values());
 
-  return result;
+  return result.sort((a, b) => Number(b.year) - Number(a.year));
 };

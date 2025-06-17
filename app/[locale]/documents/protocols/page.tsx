@@ -22,8 +22,8 @@ export const revalidate = 604800;
 
 const YearHeader = ({ year }: { year: string }) => {
   return (
-    <div className="border-b sm:border-y bg-muted/90 backdrop-blur z-0 flex sticky top-0 sm:top-16 px-6 py-3 items-center justify-between">
-      <p className="text-sm font-medium">{year}</p>
+    <div className="border-b sm:border-y bg-muted/90 cursor-pointer hover:bg-accent transition-colors backdrop-blur z-0 flex sticky top-0 sm:top-16 px-6 py-3 items-center justify-between">
+      <p className="text-sm font-medium select-none">{year}</p>
       <ChevronDownIcon className="size-4 text-muted-foreground transition-transform" />
     </div>
   );

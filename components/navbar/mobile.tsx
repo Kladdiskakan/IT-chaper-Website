@@ -11,7 +11,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
-import { useScopedI18n } from "@/locales/client";
+import { useI18n, useScopedI18n } from "@/locales/client";
 import {
   CalendarIcon,
   FileTextIcon,
@@ -27,6 +27,7 @@ const MobileNavbar = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const t = useScopedI18n("NavBar");
+  const unscopedT = useI18n();
 
   useEffect(() => {
     setOpen(false);
@@ -47,16 +48,16 @@ const MobileNavbar = ({ children }: { children: React.ReactNode }) => {
         <DrawerContent className="pb-10">
           <DrawerHeader className="flex items-center gap-2">
             <ItChip primary="var(--primary)" />
-            <DrawerTitle>The IT Chapter</DrawerTitle>
+            <DrawerTitle>{unscopedT("Common.chapter")}</DrawerTitle>
           </DrawerHeader>
           <div className="px-6">
             <Link href={"/"} className="font-medium mb-4 block w-fit">
-              Home
+              {t("Home")}
             </Link>
             {navigationGroups.map((group, index) => (
               <div className="mb-4" key={`mobile.nav.${index}`}>
                 <h2 className="text-sm font-medium mb-1 text-muted-foreground">
-                  {group.title}
+                  {t(group.title)}
                 </h2>
                 <ul className="space-y-1">
                   {group.items.map((item, index) => (

@@ -75,4 +75,8 @@ export default {
   NotFound: {
     cta: "Take me back!",
   },
+  Theme: "Theme",
+  "Theme.Dark": "Dark",
+  "Theme.Light": "Light",
+  "Theme.System": "System",
 } as const;

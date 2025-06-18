@@ -28,4 +28,4 @@ Due to [the i18n library we are using](https://next-international.vercel.app/) w
 
 ### Pages
 
-If you want to add a page, using [MDX](https://mdxjs.com/) should be sufficient for most use cases. To add a page, simply create a directory with your page name under `app/[locale]/` and create a file `page.mdx` in said directory. We also provide a script for quickly generating pages with the default layout which you can run with `pnpm generate:page [title]`.
+If you want to add a page, using [MDX](https://mdxjs.com/) should be sufficient for most use cases. To add a page, we have script for quickly generating pages with the default layout and localized pages which you can run with `pnpm generate:page [title]`.

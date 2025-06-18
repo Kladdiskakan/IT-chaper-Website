@@ -22,6 +22,8 @@ const slugify = (text: string): string => {
 
 const createMdxPage = async (title: string) => {
   const slugifiedTitle = slugify(title);
+  const properTitle =
+    title.charAt(0).toUpperCase() + title.toLowerCase().substring(1);
   const BASE_PATH = `app/[locale]/${slugifiedTitle}`;
   const canCreateArticle = !(await dirExists(BASE_PATH));
 
@@ -31,11 +33,35 @@ const createMdxPage = async (title: string) => {
 
   await fs.mkdir(BASE_PATH);
 
-  const content = `import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
+  const tsxContent = `import { getStaticParams } from "@/locales/server";
+  import { setStaticParamsLocale } from "next-international/server";
+  import { notFound } from "next/navigation";
+
+  export default async function ${properTitle}Page({
+    params,
+  }: {
+    params: Promise<{ locale: string }>;
+  }) {
+    const { locale } = await params;
+    setStaticParamsLocale(locale);
+
+    try {
+      const Content = (await import(\`./\${locale}.mdx\`)).default;
+      return <Content />;
+    } catch {
+      notFound();
+    }
+  }
+
+  export function generateStaticParams() {
+    return getStaticParams();
+  }`;
+
+  const mdxContent = `import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
 
 <Hero>
   <HeroContent className="text-white p-6 sm:p-4">
-    <HeroTitle className="mb-4">${title}</HeroTitle>
+    <HeroTitle className="mb-4">${properTitle}</HeroTitle>
   </HeroContent>
   <HeroImage
     className="brightness-70"
@@ -50,7 +76,9 @@ const createMdxPage = async (title: string) => {
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices odio nisi, id vulputate nibh aliquam eu. Donec euismod quis risus ac tempus. Pellentesque non fermentum urna, id efficitur ipsum. Nulla eget efficitur nibh. Ut in ipsum eu mauris interdum porta id bibendum ligula. Maecenas non arcu sit amet mauris scelerisque suscipit sodales vel ligula. Donec finibus justo at tempor finibus. Quisque pulvinar feugiat lacus id viverra. Nam mattis mattis mauris vel auctor. Integer molestie laoreet arcu. Phasellus maximus tellus ut lacus molestie malesuada. Proin placerat quam vel leo condimentum, sit amet fringilla nunc varius. Cras nulla nunc, sollicitudin ut blandit vel, eleifend nec diam.
 </div>`;
 
-  await fs.writeFile(BASE_PATH + "/page.mdx", content);
+  await fs.writeFile(BASE_PATH + "/page.tsx", tsxContent);
+  await fs.writeFile(BASE_PATH + "/sv.mdx", mdxContent);
+  await fs.writeFile(BASE_PATH + "/en.mdx", mdxContent);
 };
 
 const args = process.argv.slice(2);

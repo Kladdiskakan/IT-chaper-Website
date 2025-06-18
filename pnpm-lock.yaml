@@ -80,6 +80,9 @@ importers:
       googleapis:
         specifier: ^148.0.0
         version: 148.0.0
+      international-types:
+        specifier: ^0.8.1
+        version: 0.8.1
       lucide-react:
         specifier: ^0.487.0
         version: 0.487.0(react@19.1.0)

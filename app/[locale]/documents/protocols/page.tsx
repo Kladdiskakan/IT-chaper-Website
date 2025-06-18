@@ -6,7 +6,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { listAllMeetings } from "@/lib/drive";
-import { getStaticParams } from "@/locales/server";
+import { getI18n, getStaticParams } from "@/locales/server";
 import {
   ChevronDownIcon,
   ExternalLinkIcon,
@@ -37,6 +37,8 @@ const ProtocolsPage = async ({
   const { locale } = await params;
   setStaticParamsLocale(locale);
 
+  const t = await getI18n();
+
   const allMeetings = await listAllMeetings();
   const earliestMeeting = allMeetings.find(
     (m) =>
@@ -48,7 +50,7 @@ const ProtocolsPage = async ({
       <div className="px-6 py-3 text-sm">
         <div className="flex items-center gap-2 mb-1">
           <FileTextIcon className="size-4 text-primary" />
-          <p className="font-medium">Protocols</p>
+          <p className="font-medium">{t("NavBar.Documents.Protocols")}</p>
         </div>
         <p className="text-muted-foreground text-sm max-w-prose">
           Here you can find all protocols from our chapter meetings (SM) and
@@ -96,7 +98,7 @@ const ProtocolsPage = async ({
                       </CardTitle>
                       <Button variant="secondary" className="mt-auto" asChild>
                         <Link href={file.webViewLink!} target="_blank">
-                          View <ExternalLinkIcon />
+                          {t("Common.view")} <ExternalLinkIcon />
                         </Link>
                       </Button>
                     </CardHeader>

@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
-import { getI18n } from "@/locales/server";
+import { getI18n, getStaticParams } from "@/locales/server";
 import { ExternalLinkIcon } from "lucide-react";
+import { setStaticParamsLocale } from "next-international/server";
 import Link from "next/link";
 
-const EducationPage = async () => {
+const EducationPage = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
+
   const commonT = await getI18n();
   return (
     <>
@@ -129,5 +137,9 @@ const EducationPage = async () => {
     </>
   );
 };
+
+export function generateStaticParams() {
+  return getStaticParams();
+}
 
 export default EducationPage;

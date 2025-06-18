@@ -1,16 +1,18 @@
+import { getScopedI18n } from "@/locales/server";
 import { BriefcaseBusinessIcon, MailIcon, MapPinIcon } from "lucide-react";
 import Link from "next/link";
 import { documentItems } from "./nav-items";
 
-const Footer = () => {
+const Footer = async () => {
   const currentYear = new Date().getFullYear();
+  const t = await getScopedI18n("NavBar");
 
   return (
     <footer className="border-t mb-24 sm:mb-0 ">
       <div className="container mx-auto h-full p-6 sm:border-x">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           <div>
-            <p className="text-sm mb-2 text-muted-foreground">Contact</p>
+            <p className="text-sm mb-2 text-muted-foreground">{t("Contact")}</p>
             <ul className="text-sm space-y-2">
               <li className="flex items-center gap-1.5 [&>svg]:size-4 [&>svg]:text-muted-foreground">
                 <MailIcon />
@@ -37,7 +39,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <p className="text-sm mb-2 text-muted-foreground">Documents</p>
+            <p className="text-sm mb-2 text-muted-foreground">
+              {t("Documents")}
+            </p>
             <ul className="text-sm space-y-2">
               {documentItems.map((item, index) => (
                 <li key={`footer.doc.${index}`}>
@@ -45,7 +49,7 @@ const Footer = () => {
                     className="hover:underline underline-offset-4"
                     href={item.href}
                   >
-                    {item.title}
+                    {t(item.title)}
                   </Link>
                 </li>
               ))}

@@ -5,6 +5,8 @@ import {
   committeeTrustees,
   type Trustee,
 } from "@/data/trustees";
+import { getI18n, getStaticParams } from "@/locales/server";
+import { setStaticParamsLocale } from "next-international/server";
 
 const TrusteeCard = ({ trustee }: { trustee: Trustee }) => {
   return (
@@ -24,15 +26,22 @@ const TrusteeCard = ({ trustee }: { trustee: Trustee }) => {
   );
 };
 
-const TrusteesPage = () => {
+const TrusteesPage = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
+  const t = await getI18n();
+
   return (
     <div>
       <Hero>
         <HeroContent>
-          <HeroTitle className="mb-4">Trustees</HeroTitle>
+          <HeroTitle className="mb-4">{t("NavBar.Chapter.Trustees")}</HeroTitle>
           <p className="max-w-prose text-balance text-white text-center text-sm">
-            The trustees are people who have been elected by the members of the
-            IT Chapter.
+            {t("NavBar.Chapter.Trustees.description")}
           </p>
         </HeroContent>
         <HeroImage src="/assets/img/kistan-galler.avif" alt="Header Image" />
@@ -60,5 +69,9 @@ const TrusteesPage = () => {
     </div>
   );
 };
+
+export function generateStaticParams() {
+  return getStaticParams();
+}
 
 export default TrusteesPage;

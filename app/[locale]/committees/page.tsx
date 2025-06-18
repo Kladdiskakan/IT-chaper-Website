@@ -10,6 +10,8 @@ import {
 import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
 import committees, { type Committee } from "@/data/committees";
 import { cn, getContrastingColor } from "@/lib/utils";
+import { getI18n, getStaticParams } from "@/locales/server";
+import { setStaticParamsLocale } from "next-international/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -64,16 +66,25 @@ const CommitteeCard = ({ committee }: { committee: Committee }) => {
   );
 };
 
-const CommitteesPage = () => {
+const CommitteesPage = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
+
+  const t = await getI18n();
+
   return (
     <>
       <Hero>
         <HeroContent>
-          <HeroTitle className="mb-4">Committees</HeroTitle>
+          <HeroTitle className="mb-4">
+            {t("NavBar.Chapter.Committees")}
+          </HeroTitle>
           <p className="max-w-prose text-balance text-white text-center text-sm">
-            The committees are the backbone of the IT Chapter. They organize
-            events, ensure a high study quality, and provide valuable resources
-            to the members.
+            {t("NavBar.Chapter.Committees.description")}
           </p>
         </HeroContent>
         <HeroImage src="/assets/img/kistan-bar.avif" alt="Header Image" />
@@ -86,5 +97,9 @@ const CommitteesPage = () => {
     </>
   );
 };
+
+export function generateStaticParams() {
+  return getStaticParams();
+}
 
 export default CommitteesPage;

@@ -44,10 +44,10 @@ const DesktopNavbar = async () => {
                   {educationItems.map((item, index) => (
                     <ListItem
                       key={`nav.education.${index}`}
-                      title={item.title}
+                      title={t(item.title)}
                       href={item.href}
                     >
-                      {item.description}
+                      {t(item.description)}
                     </ListItem>
                   ))}
                 </ul>
@@ -60,10 +60,10 @@ const DesktopNavbar = async () => {
                   {chapterItems.map((item, index) => (
                     <ListItem
                       key={`nav.chapter.${index}`}
-                      title={item.title}
+                      title={t(item.title)}
                       href={item.href}
                     >
-                      {item.description}
+                      {t(item.description)}
                     </ListItem>
                   ))}
                 </ul>
@@ -76,10 +76,10 @@ const DesktopNavbar = async () => {
                   {documentItems.map((item, index) => (
                     <ListItem
                       key={`nav.document.${index}`}
-                      title={item.title}
+                      title={t(item.title)}
                       href={item.href}
                     >
-                      {item.description}
+                      {t(item.description)}
                     </ListItem>
                   ))}
                 </ul>

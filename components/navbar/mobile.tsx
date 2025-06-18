@@ -11,7 +11,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
-import { useI18n } from "@/locales/client";
+import { useScopedI18n } from "@/locales/client";
 import {
   CalendarIcon,
   FileTextIcon,
@@ -26,7 +26,7 @@ const MobileNavbar = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
   const [open, setOpen] = useState<boolean>(false);
 
-  const t = useI18n();
+  const t = useScopedI18n("NavBar");
 
   useEffect(() => {
     setOpen(false);
@@ -62,7 +62,7 @@ const MobileNavbar = ({ children }: { children: React.ReactNode }) => {
                   {group.items.map((item, index) => (
                     <li key={`mobile.nav.${item.title}.${index}`}>
                       <Link href={item.href} className="font-medium">
-                        {item.title}
+                        {t(item.title)}
                       </Link>
                     </li>
                   ))}
@@ -70,7 +70,7 @@ const MobileNavbar = ({ children }: { children: React.ReactNode }) => {
               </div>
             ))}
             <Link href={"/contact"} className="font-medium mb-4 block w-fit">
-              {t("NavBar.Contact")}
+              {t("Contact")}
             </Link>
             {children}
           </div>

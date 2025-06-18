@@ -28,10 +28,10 @@ const MdWrapper = ({
       <div className="border-b px-6 py-3 text-sm">
         <div className="flex items-center gap-2 mb-1">
           <ScrollIcon className="size-4 text-primary" />
-          <p className="font-medium">{t("Statutes.title")}</p>
+          <p className="font-medium">{t("NavBar.Documents.StatutesBylaws")}</p>
         </div>
         <p className="text-muted-foreground text-sm max-w-prose">
-          {t("Statutes.subtitle")}
+          {t("NavBar.Documents.StatutesBylaws.description")}
         </p>
       </div>
       <Sheet>

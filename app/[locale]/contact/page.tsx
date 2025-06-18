@@ -7,9 +7,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
-import { getI18n } from "@/locales/server";
+import { getI18n, getStaticParams } from "@/locales/server";
 import { MailIcon, PiggyBankIcon, UserIcon } from "lucide-react";
 import { Metadata } from "next";
+import { setStaticParamsLocale } from "next-international/server";
 import Link from "next/link";
 
 const contactCards: {
@@ -43,7 +44,14 @@ const contactCards: {
   },
 ];
 
-const ContactPage = () => {
+const ContactPage = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
+
   return (
     <>
       <Hero>
@@ -173,6 +181,10 @@ const ContactPage = () => {
     </>
   );
 };
+
+export function generateStaticParams() {
+  return getStaticParams();
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getI18n();

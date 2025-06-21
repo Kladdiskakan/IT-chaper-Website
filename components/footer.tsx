@@ -5,14 +5,17 @@ import { documentItems } from "./nav-items";
 
 const Footer = async () => {
   const currentYear = new Date().getFullYear();
-  const t = await getScopedI18n("NavBar");
+  const navbarT = await getScopedI18n("NavBar");
+  const t = await getScopedI18n("Footer");
 
   return (
     <footer className="border-t mb-24 sm:mb-0 ">
       <div className="container mx-auto h-full p-6 sm:border-x">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           <div>
-            <p className="text-sm mb-2 text-muted-foreground">{t("Contact")}</p>
+            <p className="text-sm mb-2 text-muted-foreground">
+              {navbarT("Contact")}
+            </p>
             <ul className="text-sm space-y-2">
               <li className="flex items-center gap-1.5 [&>svg]:size-4 [&>svg]:text-muted-foreground">
                 <MailIcon />
@@ -40,7 +43,7 @@ const Footer = async () => {
           </div>
           <div>
             <p className="text-sm mb-2 text-muted-foreground">
-              {t("Documents")}
+              {navbarT("Documents")}
             </p>
             <ul className="text-sm space-y-2">
               {documentItems.map((item, index) => (
@@ -49,14 +52,16 @@ const Footer = async () => {
                     className="hover:underline underline-offset-4"
                     href={item.href}
                   >
-                    {t(item.title)}
+                    {navbarT(item.title)}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="text-sm mb-2 text-muted-foreground">Follow us</p>
+            <p className="text-sm mb-2 text-muted-foreground">
+              {t("follow-us")}
+            </p>
             <ul className="text-sm space-y-2">
               <li>
                 <Link
@@ -97,15 +102,6 @@ const Footer = async () => {
         <div className="flex justify-between items-start md:items-center flex-col sm:flex-row gap-4">
           <p className="text-muted-foreground text-xs">
             {`Copyright © ${currentYear} Sektionen för Informationsteknik`}
-          </p>
-          <p className="text-muted-foreground text-xs text-right">
-            The source code for this site is available on{" "}
-            <Link
-              className="underline sm:no-underline hover:underline underline-offset-4"
-              href="https://www.github.com/itsektionen"
-            >
-              GitHub
-            </Link>
           </p>
         </div>
       </div>

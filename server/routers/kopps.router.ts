@@ -4,19 +4,22 @@ import { KoppsStudyYear } from "@/types/kopps";
 import { z } from "zod";
 
 export const koppsRouter = router({
-  getProgramme: procedure.input(z.string()).query(async ({ input }) => {
-    const kopps = new KoppsClient();
-    return await kopps.programme(input).get();
-  }),
+  getProgramme: procedure
+    .input(z.object({ programmeCode: z.string(), locale: z.string() }))
+    .query(async ({ input }) => {
+      const kopps = new KoppsClient(input.locale);
+      return await kopps.programme(input.programmeCode).get();
+    }),
   listSpecializations: procedure
     .input(
       z.object({
         programmeCode: z.string(),
         admissionYear: z.number(),
+        locale: z.string(),
       }),
     )
     .query(async ({ input }) => {
-      const kopps = new KoppsClient("en");
+      const kopps = new KoppsClient(input.locale);
       return kopps
         .programme(input.programmeCode)
         .specializations(input.admissionYear)
@@ -28,10 +31,11 @@ export const koppsRouter = router({
         programmeCode: z.string(),
         admissionYear: z.number(),
         studyYear: z.number().min(1).max(5).default(1),
+        locale: z.string(),
       }),
     )
     .query(async ({ input }) => {
-      const kopps = new KoppsClient("en");
+      const kopps = new KoppsClient(input.locale);
 
       return kopps
         .programme(input.programmeCode)

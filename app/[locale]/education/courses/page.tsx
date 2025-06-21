@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { trpc } from "@/lib/trpc";
 import { cn } from "@/lib/utils";
+import { useCurrentLocale, useI18n } from "@/locales/client";
 import { KoppsStudyYear } from "@/types/kopps";
 import {
   AlertCircleIcon,
@@ -47,6 +48,8 @@ const ProgrammesPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const t = useI18n();
+  const locale = useCurrentLocale();
 
   const p = searchParams.get("p");
   const a = searchParams.get("a");
@@ -84,12 +87,16 @@ const ProgrammesPage = () => {
   }, [programmeSelectorValues, createQueryString, pathname, router]);
 
   const { data: programmeInfo, isLoading: programmeInfoIsLoading } =
-    trpc.kopps.getProgramme.useQuery(programmeSelectorValues.programme);
+    trpc.kopps.getProgramme.useQuery({
+      programmeCode: programmeSelectorValues.programme,
+      locale,
+    });
   const { data: programmeDetails, isLoading: programmeDetailsIsLoading } =
     trpc.kopps.getSpecialization.useQuery({
       programmeCode: programmeSelectorValues.programme,
       admissionYear: programmeSelectorValues.admissionYear,
       studyYear: programmeSelectorValues.studyYear,
+      locale,
     });
 
   return (
@@ -137,9 +144,7 @@ const ProgrammesPage = () => {
             )}
           </div>
           {!programmeInfoIsLoading ? (
-            <p className="text-muted-foreground mb-6">
-              {programmeInfo?.titleOtherLanguage}
-            </p>
+            <p className="text-muted-foreground mb-6">{programmeInfo?.title}</p>
           ) : (
             <Skeleton className="h-5 w-1/3 mb-6 mt-3" />
           )}
@@ -159,15 +164,15 @@ const ProgrammesPage = () => {
                   key={course.code}
                 >
                   <div className="flex items-start gap-8">
-                    <p>{course.name.en}</p>
+                    <p>{course.name[locale]}</p>
                     <Button
                       className="!pr-0 !mr-0 ml-auto"
                       size="sm"
                       asChild
                       variant="link"
                     >
-                      <Link href={course.url.en}>
-                        Read more <ExternalLinkIcon />
+                      <Link href={course.url[locale]}>
+                        {t("Common.read-more")} <ExternalLinkIcon />
                       </Link>
                     </Button>
                   </div>
@@ -178,14 +183,14 @@ const ProgrammesPage = () => {
                   >
                     {
                       ConditionIcons[
-                        course.condition.en as keyof typeof ConditionIcons
+                        course.condition[locale] as keyof typeof ConditionIcons
                       ]
                     }
                     <p className="text-sm -mb-px text-muted-foreground">
-                      {course.condition.en}
+                      {course.condition[locale]}
                     </p>
                   </div>
-                  <p className="text-muted-foreground mt-auto">{`${course.credits} ${course.creditUnitAbbr.en}`}</p>
+                  <p className="text-muted-foreground mt-auto">{`${course.credits} ${course.creditUnitAbbr[locale]}`}</p>
                 </div>
               ))
             ) : (

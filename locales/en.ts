@@ -31,6 +31,14 @@ export default {
       "These are the chapter's statutes. They are our regulatory documents.",
     toc: "Table of Contents",
   },
+  Trustees: {
+    Board: "The Board",
+    "Board.description":
+      "The board is responsible for overseeing the IT Chapter's operations. This includes budgeting, fundraising, the monitoring of studies and extracurricular activities.",
+    Committees: "Committee Representatives",
+    "Committees.description":
+      "The committee representatives represent the committees of the chapter.",
+  },
   NavBar: {
     Home: "Home",
     Education: "Education",
@@ -62,6 +70,9 @@ export default {
       "Read the statutes and bylaws of the IT Chapter. They are important documents that govern the operations of the chapter.",
     Contact: "Contact",
     Search: "Search",
+  },
+  Footer: {
+    "follow-us": "Follow us",
   },
   LocaleSwitcher: {
     en: "English",

@@ -15,7 +15,9 @@ import { setStaticParamsLocale } from "next-international/server";
 import Image from "next/image";
 import Link from "next/link";
 
-const CommitteeCard = ({ committee }: { committee: Committee }) => {
+const CommitteeCard = async ({ committee }: { committee: Committee }) => {
+  const t = await getI18n();
+
   return (
     <Card className="flex flex-col overflow-hidden pt-0">
       <div
@@ -59,7 +61,9 @@ const CommitteeCard = ({ committee }: { committee: Committee }) => {
             color: getContrastingColor(committee.color ?? "#cc99ff"),
           }}
         >
-          <Link href={`/committees/${committee.slug}`}>Read more</Link>
+          <Link href={`/committees/${committee.slug}`}>
+            {t("Common.read-more")}
+          </Link>
         </Button>
       </CardContent>
     </Card>

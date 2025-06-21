@@ -30,6 +30,14 @@ export default {
     subtitle: "Detta är sektionens stadgar. De är våra styrdokument.",
     toc: "Innehåll",
   },
+  Trustees: {
+    Board: "Styrelsen",
+    "Board.description":
+      "Styrelsen ansvarar för att övervaka IT-sektionens verksamhet. Detta innefattar budgetering, uppföljning av studier samt fritidsaktiviteter.",
+    Committees: "Nämndrepresentanter",
+    "Committees.description":
+      "Nämndrepresentanterna representerar sektionens nämnder.",
+  },
   NavBar: {
     Home: "Hem",
     Education: "Utbildning",
@@ -61,6 +69,9 @@ export default {
       "Läs IT-sektionens stadgar och reglementen. De är viktiga dokument som styr sektionens verksamhet.",
     Contact: "Kontakt",
     Search: "Sök",
+  },
+  Footer: {
+    "follow-us": "Följ oss",
   },
   LocaleSwitcher: {
     en: "English",

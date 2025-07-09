@@ -8,8 +8,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
-import committees, { type Committee } from "@/data/committees";
-import { cn, getContrastingColor } from "@/lib/utils";
+import { type Committee } from "@/data/committees";
+import { backgroundColor, listCommittees } from "@/lib/committees";
+import { cn } from "@/lib/utils";
 import { getI18n, getStaticParams } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 import Image from "next/image";
@@ -22,9 +23,7 @@ const CommitteeCard = async ({ committee }: { committee: Committee }) => {
     <Card className="flex flex-col overflow-hidden pt-0">
       <div
         style={{
-          backgroundColor: committee.img
-            ? committee.color
-            : (committee.color || "#cc99ff") + "66",
+          backgroundColor: backgroundColor(committee),
         }}
         className={cn(
           "overflow-hidden h-[180px] flex",
@@ -36,20 +35,20 @@ const CommitteeCard = async ({ committee }: { committee: Committee }) => {
         {committee.img ? (
           <Image
             alt={`${committee.name} logo`}
-            className="w-50"
+            className="w-40"
             src={committee.img}
             width={1280}
             height={720}
           />
         ) : (
           <ItBolt
-            primary={(committee.color || "#cc99ff") + "66"}
-            secondary={(committee.color || "#cc99ff") + "99"}
-            size={240}
+            primary={committee.color + "66"}
+            secondary={committee.color + "99"}
+            size={260}
           />
         )}
       </div>
-      <CardHeader>
+      <CardHeader className="pt-2">
         <CardTitle className="font-poppins">{committee.name}</CardTitle>
         <CardDescription>{committee.description}</CardDescription>
       </CardHeader>
@@ -57,8 +56,8 @@ const CommitteeCard = async ({ committee }: { committee: Committee }) => {
         <Button
           asChild
           style={{
-            backgroundColor: committee.color || "#cc99ff",
-            color: getContrastingColor(committee.color ?? "#cc99ff"),
+            backgroundColor: committee.color,
+            color: committee.textColor,
           }}
         >
           <Link href={`/committees/${committee.slug}`}>
@@ -77,6 +76,8 @@ const CommitteesPage = async ({
 }) => {
   const { locale } = await params;
   setStaticParamsLocale(locale);
+
+  const committees = listCommittees();
 
   const t = await getI18n();
 

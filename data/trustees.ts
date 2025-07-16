@@ -85,6 +85,12 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["itk"],
   },
   {
+    name: "Tobias Altin",
+    role: "Cashier ITK",
+    mail: "bureaucracy@kth.it",
+    committeeIds: ["itk"],
+  },
+  {
     name: "Isak Ahlberg",
     role: "President of the Sports Committee",
     mail: "sport@kth.it",
@@ -137,13 +143,13 @@ export const committeeTrustees: Trustee[] = [
     mail: "kam@kth.it",
   },
   {
-    name: "Malin Andréasson",
+    name: "Denise Hommik",
     role: "QM",
     mail: "qm@qmisk.com",
     committeeIds: ["qmisk"],
   },
   {
-    name: "Evelina Berg",
+    name: "Alexander Lapin Pashchenko",
     role: "vQM",
     mail: "vqm@qmisk.com",
     committeeIds: ["qmisk"],

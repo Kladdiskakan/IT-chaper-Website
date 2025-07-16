@@ -182,5 +182,17 @@
 }
 
 body::selection {
-    @apply bg-primary text-foreground;
+    @apply bg-primary/50 text-foreground;
+}
+
+:root {
+    --thumb-color: var(--primary);
+    --thumb-opacity: 50%;
+
+    scrollbar-color: color-mix(
+            in srgb,
+            var(--thumb-color) var(--thumb-opacity),
+            transparent
+        )
+        transparent;
 }

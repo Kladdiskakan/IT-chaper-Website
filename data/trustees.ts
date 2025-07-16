@@ -10,7 +10,7 @@ export type Trustee = {
 
 export const boardTrustees: Trustee[] = [
   {
-    name: "Hannah Veit",
+    name: "Hannah Strid",
     role: "President",
     mail: "ordf@kth.it",
     committeeIds: ["board"],
@@ -19,22 +19,24 @@ export const boardTrustees: Trustee[] = [
     name: "Dante Julio Cosentino",
     role: "vice President",
     mail: "vordf@kth.it",
+    image: "/assets/img/trustees/dantec.avif",
     committeeIds: ["board"],
   },
   {
     name: "Benedek Boldizsár",
     role: "Cashier",
     mail: "kassor@kth.it",
+    image: "/assets/img/trustees/benedekb.avif",
     committeeIds: ["board"],
   },
   {
-    name: "Leonard Lindgren",
+    name: "Leo Fridman",
     role: "Secretary",
     mail: "sekr@kth.it",
     committeeIds: ["board"],
   },
   {
-    name: "Alexander Lapin Pashchenko",
+    name: "Alexander Larsson",
     role: "President of the Business Relations Committee",
     mail: "naringsliv@kth.it",
     committeeIds: ["board", "brc"],
@@ -44,15 +46,17 @@ export const boardTrustees: Trustee[] = [
     role: "President of the Study Social Committee",
     mail: "studiesocialt@kth.it",
     committeeIds: ["board", "study-social"],
+    image: "/assets/img/trustees/simonh.avif",
   },
   {
     name: "Elina Wang",
     role: "President of the Communications Committee",
     mail: "kommunikation@kth.it",
     committeeIds: ["komma", "board"],
+    image: "/assets/img/trustees/elinaw.avif",
   },
   {
-    name: "Denise Hommik",
+    name: "Denise Hedström",
     role: "President of the Study Committee",
     mail: "sno@kth.it",
     committeeIds: ["board", "study-committee"],
@@ -68,6 +72,7 @@ export const boardTrustees: Trustee[] = [
     role: "Board Member",
     mail: "ledamot@kth.it",
     committeeIds: ["board"],
+    image: "/assets/img/trustees/albind.avif",
   },
 ];
 
@@ -83,6 +88,7 @@ export const committeeTrustees: Trustee[] = [
     role: "Sudo",
     mail: "sudo@kth.it",
     committeeIds: ["itk"],
+    image: "/assets/img/trustees/moaf.avif",
   },
   {
     name: "Tobias Altin",
@@ -113,29 +119,34 @@ export const committeeTrustees: Trustee[] = [
     role: "vice President of the Communications Committee",
     mail: "kommunikation@kth.it",
     committeeIds: ["komma"],
+    image: "/assets/img/trustees/vladimirli.avif",
   },
   {
     name: "Simon Hedström",
     role: "History Responsible",
     mail: "historia@kth.it",
+    image: "/assets/img/trustees/simonh.avif",
   },
   {
     name: "Gustav Appelros",
     role: "INGEN",
     mail: "ingen@kth.it",
     committeeIds: ["reception"],
+    image: "/assets/img/trustees/gustava.avif",
   },
   {
     name: "Justus Kluge",
     role: "NÅGON",
     mail: "nagon@kth.it",
     committeeIds: ["reception"],
+    image: "/assets/img/trustees/justusk.avif",
   },
   {
     name: "Rozhan Asadi",
     role: "vice President of the Business",
     mail: "naringsliv@kth.it",
     committeeIds: ["brc"],
+    image: "/assets/img/trustees/rozhanh.avif",
   },
   {
     name: "Vakant Vakantsson",
@@ -143,13 +154,13 @@ export const committeeTrustees: Trustee[] = [
     mail: "kam@kth.it",
   },
   {
-    name: "Denise Hommik",
+    name: "Denise Hedström",
     role: "QM",
     mail: "qm@qmisk.com",
     committeeIds: ["qmisk"],
   },
   {
-    name: "Alexander Lapin Pashchenko",
+    name: "Alexander Larsson",
     role: "vQM",
     mail: "vqm@qmisk.com",
     committeeIds: ["qmisk"],
@@ -161,7 +172,7 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["qmisk"],
   },
   {
-    name: "Viktor Sandström",
+    name: "Viktor Bunao",
     role: "StURe",
     mail: "sture@kth.it",
     committeeIds: ["smn"],
@@ -177,6 +188,7 @@ export const committeeTrustees: Trustee[] = [
     role: "PAS CINTE",
     mail: "cintepas@kth.it",
     committeeIds: ["study-committee"],
+    image: "/assets/img/trustees/marcuss.avif",
   },
   {
     name: "Benjamin Kalatsjan-Kirejevas",
@@ -185,7 +197,7 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["study-committee"],
   },
   {
-    name: "Madelaine Bunao",
+    name: "Madelaine Sandström",
     role: "PAS TIEDB",
     mail: "tiedbpas@kth.it",
     committeeIds: ["study-committee"],
@@ -194,6 +206,7 @@ export const committeeTrustees: Trustee[] = [
     name: "Benedek Boldizsár",
     role: "PAS TCOMK",
     mail: "tcomkpas@kth.it",
+    image: "/assets/img/trustees/benedekb.avif",
     committeeIds: ["study-committee"],
   },
   {
@@ -212,6 +225,7 @@ export const committeeTrustees: Trustee[] = [
     role: "TM",
     mail: "tm@tmeit.se",
     committeeIds: ["tmeit"],
+    image: "/assets/img/trustees/marcuss.avif",
   },
   {
     name: "Dante Solender",
@@ -220,7 +234,7 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["tmeit"],
   },
   {
-    name: "Tor Dyreklev",
+    name: "Tord Yvel",
     role: "TMEIT Cashier",
     mail: "tmeit@kth.it",
     committeeIds: ["tmeit"],
@@ -230,6 +244,7 @@ export const committeeTrustees: Trustee[] = [
     role: "Head Responsible Safety Officer",
     mail: "sso@kth.it",
     committeeIds: ["sso"],
+    image: "/assets/img/trustees/ademr.avif",
   },
   {
     name: "Alin-Cristan Serban",
@@ -238,7 +253,7 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["sso"],
   },
   {
-    name: "Ludvig Hellman Öhman",
+    name: "Ludvig Andreasson",
     role: "Safety Officer",
     mail: "sso@kth.it",
     committeeIds: ["sso"],
@@ -248,6 +263,34 @@ export const committeeTrustees: Trustee[] = [
     role: "Safety Officer",
     mail: "sso@kth.it",
     committeeIds: ["sso"],
+    image: "/assets/img/trustees/moaf.avif",
+  },
+  {
+    name: "Adrian Söderström",
+    role: "Union Council",
+    mail: "kf@kth.it",
+  },
+  {
+    name: "Dante Julio Cosentino",
+    role: "Union Council",
+    mail: "kf@kth.it",
+    image: "/assets/img/trustees/dantec.avif",
+  },
+  {
+    name: "Dylan Horn Kreiner",
+    role: "Union Council",
+    mail: "kf@kth.it",
+    image: "/assets/img/trustees/dylanh.avif",
+  },
+  {
+    name: "Julle Juliusson Keuschnig",
+    role: "Union Council Substitute",
+    mail: "kf@kth.it",
+  },
+  {
+    name: "Adrian Söderström",
+    role: "Union Council",
+    mail: "kf@kth.it",
   },
   {
     name: "Daniel Nordin",
@@ -259,6 +302,7 @@ export const committeeTrustees: Trustee[] = [
     name: "Dante Julio Cosentino",
     role: "Election Committee",
     mail: "val@kth.it",
+    image: "/assets/img/trustees/dantec.avif",
     committeeIds: ["val"],
   },
   {
@@ -283,33 +327,40 @@ export const committeeTrustees: Trustee[] = [
     name: "Simon Hedström",
     role: "Election Committee",
     mail: "val@kth.it",
+    image: "/assets/img/trustees/simonh.avif",
     committeeIds: ["val"],
   },
   {
     name: "Dylan Horn Kreiner",
     role: "vice Cashier",
     mail: "kassor@kth.it",
+    image: "/assets/img/trustees/dylanh.avif",
   },
   {
     name: "Evelina Berg",
     role: "Auditor",
     mail: "revisor@kth.it",
+    image: "/assets/img/trustees/evelinab.avif",
   },
   {
     name: "Katya Holmberg",
     role: "Auditor",
     mail: "revisor@kth.it",
+    image: "/assets/img/trustees/katyah.avif",
   },
   {
     name: "Simon Hocker",
     role: "Standard Bearer",
+    image: "/assets/img/trustees/simonhocker.avif",
   },
   {
     name: "Elina Wang",
     role: "Standard Bearer",
+    image: "/assets/img/trustees/elinaw.avif",
   },
   {
     name: "Hugo Bachér",
     role: "Power Outlet Coordinator",
+    image: "/assets/img/trustees/hugob.avif",
   },
 ];

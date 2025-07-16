@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Hero, HeroContent } from "@/components/ui/hero";
 import {
@@ -90,35 +90,26 @@ const CommitteePage = async ({
       <section className="flex gap-12 mx-">
         <div className="w-full space-y-3">
           <p className="text-muted-foreground text-sm font-medium">About</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in
-            nisi vel nibh eleifend cursus.
-          </p>
-          <p>
-            Cras pharetra laoreet dignissim. Nulla ut arcu nec magna semper
-            iaculis. Pellentesque vitae sem mauris. Fusce quis nisl sed ligula
-            tristique consequat.
-          </p>
-          <p>
-            Aenean auctor quis dui eu ultricies. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos himenaeos. Sed
-            iaculis iaculis quam, eu egestas metus congue et. Class aptent
-            taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-            himenaeos.
-          </p>
-          <p>Suspendisse posuere pellentesque tincidunt.</p>
+          <p>{committee.description}</p>
         </div>
         <div className="space-y-3 shrink-0 min-w-[300px]">
           <p className="text-muted-foreground text-sm font-medium">Trustees</p>
           {trustees.length > 0 ? (
-            trustees.map((t, i) => (
+            trustees.map((trustee, i) => (
               <div key={`trustee.${i}`} className="flex gap-3 items-center">
                 <Avatar className="size-12">
-                  <AvatarFallback className="font-medium">{`${t.name.split(" ")[0][0]}${t.name.split(" ")[1][0]}`}</AvatarFallback>
+                  <AvatarFallback>
+                    {trustee.name.split(" ")[0][0] +
+                      trustee.name.split(" ")[1][0]}
+                  </AvatarFallback>
+                  <AvatarImage className="object-cover" src={trustee.image} />
                 </Avatar>
+
                 <div className="mr-8">
-                  <p>{t.name}</p>
-                  <p className="text-sm text-muted-foreground">{t.role}</p>
+                  <p>{trustee.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {trustee.role}
+                  </p>
                 </div>
                 <Button className="ml-auto" variant="ghost" size="icon">
                   <MailIcon className="text-muted-foreground" />

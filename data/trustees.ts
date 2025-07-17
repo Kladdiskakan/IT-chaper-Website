@@ -24,7 +24,7 @@ export const boardTrustees: Trustee[] = [
   },
   {
     name: "Benedek Boldizsár",
-    role: "Cashier",
+    role: "Treasurer",
     mail: "kassor@kth.it",
     image: "/assets/img/trustees/benedekb.avif",
     committeeIds: ["board"],
@@ -92,7 +92,7 @@ export const committeeTrustees: Trustee[] = [
   },
   {
     name: "Tobias Altin",
-    role: "Cashier ITK",
+    role: "Treasurer ITK",
     mail: "bureaucracy@kth.it",
     committeeIds: ["itk"],
   },
@@ -167,7 +167,7 @@ export const committeeTrustees: Trustee[] = [
   },
   {
     name: "Sanna Lindberg",
-    role: "Cashier QMISK",
+    role: "Treasurer QMISK",
     mail: "skm@qmisk.com",
     committeeIds: ["qmisk"],
   },
@@ -235,7 +235,7 @@ export const committeeTrustees: Trustee[] = [
   },
   {
     name: "Tord Yvel",
-    role: "TMEIT Cashier",
+    role: "Treasurer TMEIT",
     mail: "tmeit@kth.it",
     committeeIds: ["tmeit"],
   },
@@ -332,7 +332,7 @@ export const committeeTrustees: Trustee[] = [
   },
   {
     name: "Dylan Horn Kreiner",
-    role: "vice Cashier",
+    role: "vice Treasurer",
     mail: "kassor@kth.it",
     image: "/assets/img/trustees/dylanh.avif",
   },

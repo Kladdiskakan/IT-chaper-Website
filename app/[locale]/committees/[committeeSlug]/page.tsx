@@ -8,7 +8,7 @@ import {
 } from "@/lib/committees";
 import { getOgImageUrl } from "@/lib/og";
 import { getContrastingColor } from "@/lib/utils";
-import { getI18n, getStaticParams } from "@/locales/server";
+import { getI18n, getScopedI18n, getStaticParams } from "@/locales/server";
 import {
   ArrowLeftIcon,
   CircleAlertIcon,
@@ -35,6 +35,7 @@ const CommitteePage = async ({
   }
 
   const { committee, trustees } = response.data;
+  const t = await getScopedI18n("CommitteesPage");
 
   return (
     <>
@@ -55,7 +56,7 @@ const CommitteePage = async ({
             asChild
             variant="link">
             <Link href="/committees">
-              <ArrowLeftIcon /> Go back
+              <ArrowLeftIcon /> {t("single.back")}
             </Link>
           </Button>
           {committee.img ? (
@@ -72,18 +73,24 @@ const CommitteePage = async ({
       </Hero>
       <section className="flex flex-col lg:flex-row gap-12 mx-auto">
         <div className="w-full space-y-3">
-          <p className="text-muted-foreground text-sm font-medium">About</p>
+          <p className="text-muted-foreground text-sm font-medium">
+            {t("single.about")}
+          </p>
           <p>{committee.description}</p>
         </div>
         <div className="space-y-3 shrink-0 min-w-[300px]">
-          <p className="text-muted-foreground text-sm font-medium">Trustees</p>
+          <p className="text-muted-foreground text-sm font-medium">
+            {t("single.trustees")}
+          </p>
           {trustees.length > 0 ? (
             trustees.map((trustee, i) => (
               <div key={`trustee.${i}`} className="flex gap-3 items-center">
                 <Avatar className="size-12">
                   <AvatarFallback>
                     {trustee.name.split(" ")[0][0] +
-                      trustee.name.split(" ")[1][0]}
+                      (trustee.name.split(" ").length > 1
+                        ? trustee.name.split(" ")[1][0]
+                        : "")}
                   </AvatarFallback>
                   <AvatarImage className="object-cover" src={trustee.image} />
                 </Avatar>
@@ -94,21 +101,23 @@ const CommitteePage = async ({
                     {trustee.role}
                   </p>
                 </div>
-                <Button className="ml-auto" variant="ghost" size="icon">
-                  <MailIcon className="text-muted-foreground" />
+                <Button className="ml-auto" variant="ghost" size="icon" asChild>
+                  <Link target="_blank" href={`mailto:${trustee.mail}`}>
+                    <MailIcon className="text-muted-foreground" />
+                  </Link>
                 </Button>
               </div>
             ))
           ) : (
             <p className="bg-muted px-3 py-2 rounded-md border text-muted-foreground flex items-center gap-2">
               <CircleAlertIcon className="size-4" />
-              No trustees found
+              {t("single.no-trustees")}
             </p>
           )}
           {committee.website && (
             <>
               <p className="text-muted-foreground text-sm font-medium mt-8">
-                Website
+                {t("single.website")}
               </p>
               <Link
                 className="text-sm text-primary hover:underline underline-offset-4 flex [&>svg]:size-4 gap-2"

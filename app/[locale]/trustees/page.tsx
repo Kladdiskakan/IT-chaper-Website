@@ -16,7 +16,10 @@ const TrusteeCard = ({ trustee }: { trustee: Trustee }) => {
     <div className="text-center flex flex-col items-center">
       <Avatar className="size-52 border mb-4 text-6xl">
         <AvatarFallback>
-          {trustee.name.split(" ")[0][0] + trustee.name.split(" ")[1][0]}
+          {trustee.name.split(" ")[0][0] +
+            (trustee.name.split(" ").length > 1
+              ? trustee.name.split(" ")[1][0]
+              : "")}
         </AvatarFallback>
         <AvatarImage className="object-cover" src={trustee.image} />
       </Avatar>
@@ -52,7 +55,10 @@ const TrusteesPage = async ({
             {t("NavBar.Chapter.Trustees.description")}
           </p>
         </HeroContent>
-        <HeroImage src="/assets/img/kistan-galler.avif" alt="Header Image" />
+        <HeroImage
+          src="/assets/img/kistan-galler.avif"
+          alt="Blue lights behind metal plates with holes in it."
+        />
       </Hero>
       <h3 className="text-lg font-medium">{t("Trustees.Board")}</h3>
       <p className="text-muted-foreground max-w-prose mb-8 text-sm">

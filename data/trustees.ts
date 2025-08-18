@@ -36,7 +36,7 @@ export const boardTrustees: Trustee[] = [
     committeeIds: ["board"],
   },
   {
-    name: "Alexander Larsson",
+    name: "Alexander Lapin Pashchenko",
     role: "President of the Business Relations Committee",
     mail: "naringsliv@kth.it",
     committeeIds: ["board", "brc"],
@@ -59,7 +59,7 @@ export const boardTrustees: Trustee[] = [
     name: "Denise Hedström",
     role: "President of the Study Committee",
     mail: "sno@kth.it",
-    committeeIds: ["board", "study-committee"],
+    committeeIds: ["board", "study"],
   },
   {
     name: "Julle Juliusson Keuschnig",
@@ -117,7 +117,7 @@ export const committeeTrustees: Trustee[] = [
   {
     name: "Vladimir Li",
     role: "vice President of the Communications Committee",
-    mail: "kommunikation@kth.it",
+    mail: "komma@kth.it",
     committeeIds: ["komma"],
     image: "/assets/img/trustees/vladimirli.avif",
   },
@@ -125,6 +125,7 @@ export const committeeTrustees: Trustee[] = [
     name: "Simon Hedström",
     role: "History Responsible",
     mail: "historia@kth.it",
+    committeeIds: ["komma"],
     image: "/assets/img/trustees/simonh.avif",
   },
   {
@@ -143,14 +144,15 @@ export const committeeTrustees: Trustee[] = [
   },
   {
     name: "Rozhan Asadi",
-    role: "vice President of the Business",
+    role: "vice President of the Business Relations Committee",
     mail: "naringsliv@kth.it",
     committeeIds: ["brc"],
     image: "/assets/img/trustees/rozhanh.avif",
   },
   {
-    name: "Vakant Vakantsson",
-    role: "KAM Responsile",
+    name: "Vakant",
+    role: "KAM Responsible",
+    committeeIds: ["brc"],
     mail: "kam@kth.it",
   },
   {
@@ -160,7 +162,7 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["qmisk"],
   },
   {
-    name: "Alexander Larsson",
+    name: "Alexander Lapin Pashchenko",
     role: "vQM",
     mail: "vqm@qmisk.com",
     committeeIds: ["qmisk"],
@@ -187,38 +189,39 @@ export const committeeTrustees: Trustee[] = [
     name: "Marcus Söderlund",
     role: "PAS CINTE",
     mail: "cintepas@kth.it",
-    committeeIds: ["study-committee"],
+    committeeIds: ["study"],
     image: "/assets/img/trustees/marcuss.avif",
   },
   {
     name: "Benjamin Kalatsjan-Kirejevas",
     role: "PAS TIDAB",
     mail: "tidabpas@kth.it",
-    committeeIds: ["study-committee"],
+    committeeIds: ["study"],
   },
   {
     name: "Madelaine Sandström",
     role: "PAS TIEDB",
     mail: "tiedbpas@kth.it",
-    committeeIds: ["study-committee"],
+    committeeIds: ["study"],
   },
   {
     name: "Benedek Boldizsár",
     role: "PAS TCOMK",
     mail: "tcomkpas@kth.it",
     image: "/assets/img/trustees/benedekb.avif",
-    committeeIds: ["study-committee"],
+    committeeIds: ["study"],
   },
   {
     name: "Jonathan Lundström",
     role: "PAS MASTER",
     mail: "masterpas@kth.it",
-    committeeIds: ["study-committee"],
+    committeeIds: ["study"],
   },
   {
     name: "Nils Granqvist",
     role: "International Coordinator",
     mail: "international@kth.it",
+    committeeIds: ["jml"],
   },
   {
     name: "Marcus Söderlund",

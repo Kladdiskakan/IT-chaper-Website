@@ -8,8 +8,8 @@ import {
 } from "@/components/ui/card";
 import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
 import { getOgImageUrl } from "@/lib/og";
-import { getI18n, getStaticParams } from "@/locales/server";
-import { MailIcon, PiggyBankIcon, UserIcon } from "lucide-react";
+import { getI18n, getScopedI18n, getStaticParams } from "@/locales/server";
+import { MailIcon, MapPin, PiggyBankIcon, UserIcon } from "lucide-react";
 import { Metadata } from "next";
 import { setStaticParamsLocale } from "next-international/server";
 import Link from "next/link";
@@ -25,9 +25,9 @@ const contactCards: {
     title: "The Chapter",
     icon: <ItChip primary="var(--primary)" />,
     info: {
-      Name: "Chapter for Information- and Nanotechnology",
+      Name: "Chapter for Information Technology",
       Students: "~2000",
-      "Organization number": " 802431-2442",
+      "Organization number": "802431-2442",
       "Legal form": "Non-profit organization",
       "Permit unit's restaurant number": "61 80 1301",
     },
@@ -43,6 +43,18 @@ const contactCards: {
       "SWIFT/BIC-code": "ESSE SESS",
     },
   },
+  {
+    title: "Addresses",
+    icon: <MapPin />,
+    info: {
+      "Visting Address": "Electrum, Kistagången 16, 164 40 Kista",
+      "Delivery Address":
+        "KTH Service Center Electrum, Kistagången 16, 164 40 Kista",
+      "Billing Address":
+        "Sektionen för Informationsteknik, Electrum 210, 164 40 Kista",
+      "Chapter Locale": "Kistan 2.0, Kistagången 14, 164 40 Kista",
+    },
+  },
 ];
 
 const ContactPage = async ({
@@ -53,23 +65,32 @@ const ContactPage = async ({
   const { locale } = await params;
   setStaticParamsLocale(locale);
 
+  const t = await getScopedI18n("ContactPage");
+  const commonT = await getI18n();
+
+  const trusteeLink = (
+    <Link className="underline underline-offset-4" href="/trustees">
+      {t("trustees-page")}
+    </Link>
+  );
+
   return (
     <>
       <Hero>
         <HeroImage
           className="brightness-70 saturate-75 -hue-rotate-15"
           src="/assets/img/couches.png"
-          alt="Couches"
+          alt={t("hero-image-alt")}
         />
         <HeroContent>
-          <HeroTitle>Contact</HeroTitle>
+          <HeroTitle>{t("title")}</HeroTitle>
         </HeroContent>
       </Hero>
       <section className="mb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
           <Card>
             <CardHeader>
-              <CardTitle>President</CardTitle>
+              <CardTitle>{t("president")}</CardTitle>
             </CardHeader>
             <CardContent className="text-sm -mt-3">
               <div className="flex gap-2 items-center">
@@ -80,8 +101,7 @@ const ContactPage = async ({
                 <MailIcon className="size-4 text-muted-foreground" />
                 <Link
                   className="hover:underline underline-offset-4 text-primary"
-                  href="mailto:ordf@kth.it"
-                >
+                  href="mailto:ordf@kth.it">
                   ordf@kth.it
                 </Link>
               </div>
@@ -89,19 +109,18 @@ const ContactPage = async ({
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Business Relations</CardTitle>
+              <CardTitle>{t("brc")}</CardTitle>
             </CardHeader>
             <CardContent className="text-sm -mt-3">
               <div className="flex gap-2 items-center">
                 <UserIcon className="size-4 text-muted-foreground" />
-                <p>Alexander Larsson</p>
+                <p>Alexander Lapin Pashchenko</p>
               </div>
               <div className="flex gap-2 items-center">
                 <MailIcon className="size-4 text-muted-foreground" />
                 <Link
                   className="hover:underline underline-offset-4 text-primary"
-                  href="mailto:naringsliv@kth.it"
-                >
+                  href="mailto:naringsliv@kth.it">
                   naringsliv@kth.it
                 </Link>
               </div>
@@ -109,7 +128,7 @@ const ContactPage = async ({
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Communications</CardTitle>
+              <CardTitle>{t("komma")}</CardTitle>
             </CardHeader>
             <CardContent className="text-sm -mt-3">
               <div className="flex gap-2 items-center">
@@ -120,8 +139,7 @@ const ContactPage = async ({
                 <MailIcon className="size-4 text-muted-foreground" />
                 <Link
                   className="hover:underline underline-offset-4 text-primary"
-                  href="mailto:komma@kth.it"
-                >
+                  href="mailto:komma@kth.it">
                   komma@kth.it
                 </Link>
               </div>
@@ -129,19 +147,22 @@ const ContactPage = async ({
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Council of Safety</CardTitle>
+              <CardTitle>{t("council-of-safety")}</CardTitle>
             </CardHeader>
             <CardContent className="text-sm -mt-3">
               <div className="flex gap-2 items-center">
                 <UserIcon className="size-4 text-muted-foreground" />
-                <p>Read more</p>
+                <Link
+                  className="hover:underline underline-offset-4"
+                  href="/committees/sso">
+                  {commonT("Common.read-more")}
+                </Link>
               </div>
               <div className="flex gap-2 items-center">
                 <MailIcon className="size-4 text-muted-foreground" />
                 <Link
                   className="hover:underline underline-offset-4 text-primary"
-                  href="mailto:sso@kth.it"
-                >
+                  href="mailto:sso@kth.it">
                   sso@kth.it
                 </Link>
               </div>
@@ -149,12 +170,7 @@ const ContactPage = async ({
           </Card>
         </div>
         <p className="text-sm max-w-prose text-center mx-auto text-muted-foreground">
-          If you need to contact someone else or a specific committee, you can
-          find all the trustee elected and responsible members along with their
-          contact information on the page{" "}
-          <Link className="underline underline-offset-4" href="/trustees">
-            Trustee Elected.
-          </Link>
+          {t("other-note", { trusteeLink })}
         </p>
       </section>
       <section>

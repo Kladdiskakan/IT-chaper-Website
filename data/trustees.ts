@@ -13,6 +13,7 @@ export const boardTrustees: Trustee[] = [
     name: "Hanna Strid",
     role: "President",
     mail: "ordf@kth.it",
+    image: "/assets/img/trustees/hannas.avif",
     committeeIds: ["board"],
   },
   {
@@ -174,7 +175,7 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["qmisk"],
   },
   {
-    name: "Viktor Bunao",
+    name: "Viktor Sandström",
     role: "StURe",
     mail: "sture@kth.it",
     committeeIds: ["smn"],
@@ -199,7 +200,7 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["study"],
   },
   {
-    name: "Madelaine Sandström",
+    name: "Madelaine Regine Bunao",
     role: "PAS TIEDB",
     mail: "tiedbpas@kth.it",
     committeeIds: ["study"],
@@ -269,7 +270,7 @@ export const committeeTrustees: Trustee[] = [
     image: "/assets/img/trustees/moaf.avif",
   },
   {
-    name: "Adrian Söderström",
+    name: "Adrian Boström",
     role: "Union Council",
     mail: "kf@kth.it",
   },
@@ -291,8 +292,8 @@ export const committeeTrustees: Trustee[] = [
     mail: "kf@kth.it",
   },
   {
-    name: "Adrian Söderström",
-    role: "Union Council",
+    name: "Vakant",
+    role: "Union Council Substitute",
     mail: "kf@kth.it",
   },
   {

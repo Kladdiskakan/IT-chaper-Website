@@ -10,7 +10,7 @@ export type Trustee = {
 
 export const boardTrustees: Trustee[] = [
   {
-    name: "Hannah Strid",
+    name: "Hanna Strid",
     role: "President",
     mail: "ordf@kth.it",
     committeeIds: ["board"],

@@ -10,7 +10,7 @@ export type Trustee = {
 
 export const boardTrustees: Trustee[] = [
   {
-    name: "Hanna Strid",
+    name: "Hannah Veit",
     role: "President",
     mail: "ordf@kth.it",
     image: "/assets/img/trustees/hannas.avif",
@@ -31,7 +31,7 @@ export const boardTrustees: Trustee[] = [
     committeeIds: ["board"],
   },
   {
-    name: "Leo Fridman",
+    name: "Leonard Lindgren",
     role: "Secretary",
     mail: "sekr@kth.it",
     committeeIds: ["board"],
@@ -57,7 +57,7 @@ export const boardTrustees: Trustee[] = [
     image: "/assets/img/trustees/elinaw.avif",
   },
   {
-    name: "Denise Hedström",
+    name: "Denise Hommik",
     role: "President of the Study Committee",
     mail: "sno@kth.it",
     committeeIds: ["board", "study"],
@@ -238,7 +238,7 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["tmeit"],
   },
   {
-    name: "Tord Yvel",
+    name: "Tor Dyrklev",
     role: "Treasurer TMEIT",
     mail: "tmeit@kth.it",
     committeeIds: ["tmeit"],
@@ -257,7 +257,7 @@ export const committeeTrustees: Trustee[] = [
     committeeIds: ["sso"],
   },
   {
-    name: "Ludvig Andreasson",
+    name: "Ludvig Hellman Öhman",
     role: "Safety Officer",
     mail: "sso@kth.it",
     committeeIds: ["sso"],

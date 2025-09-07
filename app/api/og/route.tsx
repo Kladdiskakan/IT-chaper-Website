@@ -137,8 +137,6 @@ export async function GET(request: NextRequest) {
       </div>
     ),
     {
-      // For convenience, we can re-use the exported opengraph-image
-      // size config to also set the ImageResponse's width and height.
       ...size,
       fonts: [
         {

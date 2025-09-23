@@ -13,7 +13,7 @@ export const boardTrustees: Trustee[] = [
     name: "Hannah Veit",
     role: "President",
     mail: "ordf@kth.it",
-    image: "/assets/img/trustees/hannas.avif",
+    image: "/assets/img/trustees/hannahv.jpg",
     committeeIds: ["board"],
   },
   {

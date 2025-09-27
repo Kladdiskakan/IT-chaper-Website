@@ -27,7 +27,7 @@ const EventCard = ({ event }: { event: CalendarEvent }) => {
         />
         <div className="px-6">
           <CardTitle className="mb-1.5 line-clamp-2">{event.title}</CardTitle>
-          <CardDescription className="line-clamp-2">
+          <CardDescription className="line-clamp-2 max-w-full break-all">
             {event.description}
           </CardDescription>
         </div>

@@ -23,6 +23,8 @@ export default {
     News: {
       title: "Senaste nytt",
       "no-news": "Det finns inga nyheter.",
+      "no-news-description":
+        "Tyvärr finns det inga nyheter eller evenemang här för tillfället. Antingen händer ingenting just nu, eller så saknas de. Vänligen besök våra sociala medier eller kolla igen senare.",
     },
   },
   ChapterPage: {
@@ -87,12 +89,14 @@ export default {
     title: "Sektionsorgan",
     "hero-image-alt":
       "Baren i Kistan 2.0 med många flaskor och kylar i bakgrunden.",
+    protocols: "Här hittar du {committeName}s protokoll.",
     single: {
       back: "Gå tillbaka",
       about: "Om",
       trustees: "Förtroendevalda",
       "no-trustees": "Inga förtroendevalda hittades",
       website: "Hemsida",
+      protocols: "Protokoll",
     },
   },
   ContactPage: {

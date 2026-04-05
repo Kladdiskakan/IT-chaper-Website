@@ -19,27 +19,21 @@ export function CompanyInfoCard() {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Mail className="h-5 w-5" />
-          Kontakt & Information
+          Kontakt & Produktkatalog
         </CardTitle>
-        <CardDescription>
-          Kontakta oss eller utforska våra tjänster
-        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         {/* E-post sektion */}
         <div className="space-y-3">
-          <h4 className="font-medium">Kontakta oss</h4>
+          <h4 className="font-medium">Tveka inte att kontakta om du har några frågor</h4>
           <div className="space-y-2">
-            <p className="text-sm text-muted-foreground">
-              <strong>Näringslivsnämnden</strong><br />
-              IT-Sektionen, KTH
-            </p>
+
             <p className="text-sm">
               <a
                 href="mailto:naringsliv@it.kth.se"
                 className="text-primary hover:underline break-all"
               >
-                naringsliv@it.kth.se
+                naringsliv@kth.it
               </a>
             </p>
             <Button
@@ -65,7 +59,7 @@ export function CompanyInfoCard() {
             <div className="flex items-center gap-3 mb-3">
               <FileText className="h-8 w-8 text-red-500" />
               <div>
-                <p className="font-medium text-sm">Produktkatalog 2024</p>
+                <p className="font-medium text-sm">Produktkatalog 2026</p>
                 <p className="text-xs text-muted-foreground">PDF • 2.4 MB</p>
               </div>
             </div>

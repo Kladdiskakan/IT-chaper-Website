@@ -60,7 +60,7 @@ export function CompanyInfoCard() {
               <FileText className="h-8 w-8 text-red-500" />
               <div>
                 <p className="font-medium text-sm">Produktkatalog 2026</p>
-                <p className="text-xs text-muted-foreground">PDF • 2.4 MB</p>
+                <p className="text-xs text-muted-foreground">PDF • 6.9 MB</p>
               </div>
             </div>
 

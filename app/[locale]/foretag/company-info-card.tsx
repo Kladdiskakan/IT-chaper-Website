@@ -25,7 +25,7 @@ export function CompanyInfoCard() {
       <CardContent className="space-y-6">
         {/* E-post sektion */}
         <div className="space-y-3">
-          <h4 className="font-medium">Tveka inte att kontakta om du har några frågor</h4>
+          <h4 className="font-medium">Tveka inte att kontakta oss om du har några frågor</h4>
           <div className="space-y-2">
 
             <p className="text-sm">

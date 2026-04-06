@@ -1,0 +1,66 @@
+import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
+import { CompanyContactForm } from "./company-contact-form";
+import { CompanyInfoCard } from "./company-info-card";
+
+<Hero>
+  <HeroContent className="text-white p-6 sm:p-4">
+    <HeroTitle className="mb-4">Samarbeta med IT-Sektionen</HeroTitle>
+  </HeroContent>
+  <HeroImage
+    className="brightness-70"
+    src="/path/to/your/image.png"
+    alt="Header Image"
+  />
+</Hero>
+
+<div className="mx-auto max-w-7xl px-6 py-12">
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    {/* Vänster kolumn - Huvudinnehåll */}
+    <div className="lg:col-span-2 space-y-8">
+      <div className="prose prose-lg max-w-none">
+# Vill du och ditt företag synas för över tusentals IT-Studenter? **Då har du kommit precis rätt**
+
+IT-Sektionen är en sektion med över 1000 studenter som studerar inom följande program:
+
+- [Civilingenjör i informationsteknik](https://www.kth.se/student/kurser/program/CINTE?l=sv)
+- [Högskoleingenjör i datateknik](https://www.kth.se/student/kurser/program/TIDAB?l=sv)
+- [Internationell kandidat inom Information- och mediateknik](https://www.kth.se/student/kurser/program/TCOMK?l=sv)
+
+## Evenmang
+Det finns massvis med möjligheter att hålla evenemang. Det kan vara allt från en lunchföreläsning på campus till en case night i vår sektionslokal.  
+
+
+## Mottagningen - Träffa våra nya studenter
+
+Under 3 intensiva veckor i augusti tar vi emot cirka 260 nya studenter till sektionen. 
+Tillsammans med ytterligare 50 äldre studenter som hjälper till att arrangera är Mottagningen en utmärkt möjlighet för företag att synas. 
+Deltagande för företagen kan vara allt mellan att hålla studiebesök eller deltaga på mottagningsevent till att synas på vår merch, nolleboken och på mottagningssidan.
+
+
+## Reality check - Täffa våra Master studenter
+Intresserad av att hungriga studenter som närmar sig arbetsmarknaden med stormsteg? 
+*Då är Reality check något för er!*
+Reality check är ett format där vi tillsammans skräddarsyr ett event för våra masterstudenter. Detta skulle kunna innebära allt från ett studiebesök där våra studenter får en "reality check" på hur arbetslivet ser ut
+Det skulle också kunna vara att hålla ett event eller pub i våran studentlokal ute i Kista. 
+
+
+## Marknadsföring
+Nå ut till över 3000(Facebook+discord+linkedin) studenter genom ett inlägg på våran facebook, discord och linkedin. En perfekt möjlighet att sprida 
+jobbannonser, ställen för att skriva sin kandidat eller bara visa att ni stöttar IT-Sektionen på KTH. Utöver digitala kanalerna finns även möjlighet att synas på våran 
+Sektions TV samt på postrar runt om i studentlokalen.
+
+
+<div className="text-center">
+  <h2>Kontaktformulär</h2>
+</div>
+      </div>
+
+      <CompanyContactForm />
+    </div>
+
+    {/* Höger kolumn - Info-ruta */}
+    <div className="lg:col-span-1">
+      <CompanyInfoCard />
+    </div>
+  </div>
+</div>

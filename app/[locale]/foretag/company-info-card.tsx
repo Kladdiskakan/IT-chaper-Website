@@ -3,8 +3,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, FileText, ExternalLink } from "lucide-react";
+import { useI18n } from "@/locales/client";
 
 export function CompanyInfoCard() {
+  const t = useI18n();
   const handleEmailClick = () => {
     window.location.href = 'mailto:naringsliv@it.kth.se?subject=Företagsförfrågan';
   };
@@ -19,13 +21,13 @@ export function CompanyInfoCard() {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Mail className="h-5 w-5" />
-          Kontakt & Produktkatalog
+          {t('CompanyInfoCard.title')}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         {/* E-post sektion */}
         <div className="space-y-3">
-          <h4 className="font-medium">Tveka inte att kontakta oss om du har några frågor</h4>
+          <h4 className="font-medium">{t('CompanyInfoCard.emailSection')}</h4>
           <div className="space-y-2">
 
             <p className="text-sm">
@@ -43,24 +45,24 @@ export function CompanyInfoCard() {
               className="w-full cursor-pointer"
             >
               <Mail className="h-4 w-4 mr-2" />
-              Skicka e-post
+              {t('CompanyInfoCard.sendEmail')}
             </Button>
           </div>
         </div>
 
         {/* Produktkatalog sektion */}
         <div className="space-y-3">
-          <h4 className="font-medium">Vår produktkatalog</h4>
+          <h4 className="font-medium">{t('CompanyInfoCard.catalogSection')}</h4>
           <p className="text-sm text-muted-foreground">
-            Dessa är färdiga paketförslag med givetvis är vi öppna för att skräddarsy något som passar just ert företag!
+            {t('CompanyInfoCard.catalogDescription')}
           </p>
 
           <div className="border rounded-lg p-4 bg-muted/30">
             <div className="flex items-center gap-3 mb-3">
               <FileText className="h-8 w-8 text-red-500" />
               <div>
-                <p className="font-medium text-sm">Produktkatalog 2026</p>
-                <p className="text-xs text-muted-foreground">PDF • 6.9 MB</p>
+                <p className="font-medium text-sm">{t('CompanyInfoCard.catalogTitle')}</p>
+                <p className="text-xs text-muted-foreground">{t('CompanyInfoCard.catalogSize')}</p>
               </div>
             </div>
 
@@ -70,26 +72,26 @@ export function CompanyInfoCard() {
               size="sm"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
-              Öppna katalog
+              {t('CompanyInfoCard.openCatalog')}
             </Button>
           </div>
         </div>
 
         {/* Ytterligare information */}
         <div className="pt-4 border-t">
-          <h4 className="font-medium mb-3">Varför samarbeta med oss?</h4>
+          <h4 className="font-medium mb-3">{t('CompanyInfoCard.whyTitle')}</h4>
           <div className="space-y-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span>Nå över 1000 IT-studenter</span>
+              <span>{t('CompanyInfoCard.why1')}</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span>Framtidens ingenjörer och utvecklare</span>
+              <span>{t('CompanyInfoCard.why2')}</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span>Event, rekrytering & sponsring</span>
+              <span>{t('CompanyInfoCard.why3')}</span>
             </div>
           </div>
         </div>

@@ -4,8 +4,10 @@ import { Form, FormItem, FormLabel, FormControl, FormDescription, FormMessage, F
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useI18n } from "@/locales/client";
 
 export function CompanyContactForm() {
+  const t = useI18n();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -40,11 +42,11 @@ export function CompanyContactForm() {
         setSubmitMessage(result.message);
         form.reset();
       } else {
-        setSubmitMessage(result.error || 'Ett fel uppstod');
+        setSubmitMessage(result.error || t('CompanyForm.error'));
       }
     } catch (error) {
-      console.error('Fel vid skickande av formulär:', error);
-      setSubmitMessage('Ett nätverksfel uppstod. Försök igen senare.');
+      console.error('Error submitting form:', error);
+      setSubmitMessage(t('CompanyForm.networkError'));
     } finally {
       setIsSubmitting(false);
     }
@@ -59,12 +61,12 @@ export function CompanyContactForm() {
             name="companyName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Företagsnamn</FormLabel>
+                <FormLabel>{t('CompanyForm.companyName')}</FormLabel>
                 <FormControl>
                   <input
                     {...field}
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder="Ange företagsnamn"
+                    placeholder={t('CompanyForm.companyNamePlaceholder')}
                   />
                 </FormControl>
                 <FormMessage />
@@ -77,12 +79,12 @@ export function CompanyContactForm() {
             name="contactPerson"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Kontaktperson</FormLabel>
+                <FormLabel>{t('CompanyForm.contactPerson')}</FormLabel>
                 <FormControl>
                   <input
                     {...field}
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder="Ange kontaktperson"
+                    placeholder={t('CompanyForm.contactPersonPlaceholder')}
                   />
                 </FormControl>
                 <FormMessage />
@@ -95,13 +97,13 @@ export function CompanyContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>E-post</FormLabel>
+                <FormLabel>{t('CompanyForm.email')}</FormLabel>
                 <FormControl>
                   <input
                     {...field}
                     type="email"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder="Ange e-postadress"
+                    placeholder={t('CompanyForm.emailPlaceholder')}
                   />
                 </FormControl>
                 <FormMessage />
@@ -114,13 +116,13 @@ export function CompanyContactForm() {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Telefon</FormLabel>
+                <FormLabel>{t('CompanyForm.phone')}</FormLabel>
                 <FormControl>
                   <input
                     {...field}
                     type="tel"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder="Ange telefonnummer"
+                    placeholder={t('CompanyForm.phonePlaceholder')}
                   />
                 </FormControl>
                 <FormMessage />
@@ -134,17 +136,17 @@ export function CompanyContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Meddelande</FormLabel>
+              <FormLabel>{t('CompanyForm.message')}</FormLabel>
               <FormControl>
                 <textarea
                   {...field}
                   className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  placeholder="Berätta om ert intresse för samarbete med IT-sektionen"
+                  placeholder={t('CompanyForm.messagePlaceholder')}
                   rows={4}
                 />
               </FormControl>
               <FormDescription>
-                Beskriv gärna vad ni är intresserade av - events, rekrytering, sponsring, etc.
+                {t('CompanyForm.messageDescription')}
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -152,7 +154,7 @@ export function CompanyContactForm() {
         />
 
         <Button type="submit" className="w-full cursor-pointer" disabled={isSubmitting}>
-          {isSubmitting ? 'Skickar...' : 'Skicka förfrågan'}
+          {isSubmitting ? t('CompanyForm.submitting') : t('CompanyForm.submit')}
         </Button>
 
         {submitMessage && (

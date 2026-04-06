@@ -1,4 +1,6 @@
 import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
+import { CompanyContactForm } from "./company-contact-form";
+import { CompanyInfoCard } from "./company-info-card";
 
 <Hero>
   <HeroContent className="text-white p-6 sm:p-4">
@@ -6,16 +8,61 @@ import { Hero, HeroContent, HeroImage, HeroTitle } from "@/components/ui/hero";
   </HeroContent>
   <HeroImage
     className="brightness-70"
-    src="/path/to/your/image.png"
+    src="/assets/img/teamwork.jpg"
     alt="Header Image"
   />
 </Hero>
 
-<div className="mx-auto max-w-prose">
-## Insert your markdown content here.
+<div className="mx-auto max-w-7xl px-6 py-12">
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    {/* Vänster kolumn - Huvudinnehåll */}
+    <div className="lg:col-span-2 space-y-8">
+      <div className="prose prose-lg max-w-none">
+# Do you want your company to be visible to over thousands of IT students? **Then you have come to the right place**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices odio nisi, id vulputate nibh aliquam eu. Donec euismod quis risus ac tempus. Pellentesque non fermentum urna, id efficitur ipsum. Nulla eget efficitur nibh. Ut in ipsum eu mauris interdum porta id bibendum ligula. Maecenas non arcu sit amet mauris scelerisque suscipit sodales vel ligula. Donec finibus justo at tempor finibus. Quisque pulvinar feugiat lacus id viverra. Nam mattis mattis mauris vel auctor. Integer molestie laoreet arcu. Phasellus maximus tellus ut lacus molestie malesuada. Proin placerat quam vel leo condimentum, sit amet fringilla nunc varius. Cras nulla nunc, sollicitudin ut blandit vel, eleifend nec diam.
+The IT Chapter is a chapter with over 1000 students studying in the following programs
+
+- [Degree Programme in Information and Communication Technology](https://www.kth.se/student/kurser/program/CINTE)
+- [Degree Programme in Computer Engineering](https://www.kth.se/student/kurser/program/TIDAB)
+- [Bachelor's Programme in Information and Communication Technology](https://www.kth.se/student/kurser/program/TCOMK)
+
+## Evenmang
+Det finns massvis med möjligheter att hålla evenemang. Det kan vara allt från en lunchföreläsning på campus till en case night i vår sektionslokal.  
+
+
+## Reception - Meet our new students
+
+During 3 intensive weeks in August, we welcome approximately 260 new students to the chapter. 
+Together with another 50 older students who help organize, the Reception is an excellent opportunity for companies to get exposure. 
+Participation for companies can range from hosting an event at their place to being visible on our merch, the nollebook and on the reception page.
+
+
+## Reality check - Meet our master students
+Interested in hungry students who are approaching the job market by leaps and bounds? 
+*Then Reality check is for you!*
+Reality check is a format where we together tailor an event for our master's students. This could mean anything from a study visit where our students get a "reality check" on what a workplace look like.
+It could also be holding an event or pub in our chpater hall in Kista.
+
+
+## Marketing
+Reach over 3000 students through a post on our Facebook, Instagram, Discord and Linkedin. A perfect opportunity to spread 
+job ads, announce places to write your candidacy or just show that you support the IT Chapter at KTH. In addition to the digital channels, there is also the opportunity 
+to be seen on our physical places like Chapter TV and on posters around the chpater hall.
+
+
+<div className="text-center">
+  <h2>Contact Form</h2>
 </div>
+      </div>
 
+      <CompanyContactForm />
+    </div>
+
+    {/* Höger kolumn - Info-ruta */}
+    <div className="lg:col-span-1">
+      <CompanyInfoCard />
+    </div>
+  </div>
+</div>
 
 

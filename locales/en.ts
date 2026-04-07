@@ -328,7 +328,7 @@ export default {
     openCatalog: "Open catalog",
     whyTitle: "Why collaborate with us?",
     why1: "Reach over 1000 IT students",
-    why2: "An opportunity to inspire 200+ new students yeach year",
+    why2: "An opportunity to inspire 200+ new students each year",
     why3: "Connect with future IT talent",
   },
 } as const;

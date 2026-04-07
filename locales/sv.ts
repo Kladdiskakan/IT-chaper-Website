@@ -308,7 +308,7 @@ export default {
     phone: "Telefon",
     phonePlaceholder: "Ange telefonnummer",
     message: "Meddelande",
-    messagePlaceholder: "Beskriv lite kort vad ni är intresserade av - events, rekrytering, mottagning.",
+    messagePlaceholder: "Beskriv lite kort vad ni är intresserade av - evenemang, rekrytering, mottagning.",
 
     submit: "Skicka förfrågan",
     submitting: "Skickar...",

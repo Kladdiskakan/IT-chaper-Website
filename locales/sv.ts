@@ -308,8 +308,8 @@ export default {
     phone: "Telefon",
     phonePlaceholder: "Ange telefonnummer",
     message: "Meddelande",
-    messagePlaceholder: "Berätta om ert intresse för samarbete med IT-sektionen",
-    messageDescription: "Beskriv gärna vad ni är intresserade av - events, rekrytering, sponsring, etc.",
+    messagePlaceholder: "Beskriv lite kort vad ni är intresserade av - events, rekrytering, mottagning.",
+
     submit: "Skicka förfrågan",
     submitting: "Skickar...",
     error: "Ett fel uppstod",
@@ -317,7 +317,7 @@ export default {
   },
   CompanyInfoCard: {
     title: "Kontakt & Produktkatalog",
-    emailSection: "Tveka inte att kontakta oss om du har några frågor",
+    emailSection: "Tveka inte att kontakta oss om du har några frågor!",
     sendEmail: "Skicka e-post",
     catalogSection: "Vår produktkatalog",
     catalogDescription: "Dessa är färdiga paketförslag med givetvis är vi öppna för att skräddarsy något som passar just ert företag!",
@@ -326,7 +326,7 @@ export default {
     openCatalog: "Öppna katalog",
     whyTitle: "Varför samarbeta med oss?",
     why1: "Nå över 1000 IT-studenter",
-    why2: "Framtidens ingenjörer och utvecklare",
-    why3: "Event, rekrytering & sponsring",
+    why2: "Möjlighet att inspirera 200+ nya studenter",
+    why3: "Kontakt med framtida IT-talanger",
   },
 } as const;

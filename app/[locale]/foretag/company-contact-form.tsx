@@ -145,9 +145,6 @@ export function CompanyContactForm() {
                   rows={4}
                 />
               </FormControl>
-              <FormDescription>
-                {t('CompanyForm.messageDescription')}
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

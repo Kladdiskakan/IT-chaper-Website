@@ -311,8 +311,7 @@ export default {
     phone: "Phone",
     phonePlaceholder: "Enter phone number",
     message: "Message",
-    messagePlaceholder: "Tell us about your interest in collaborating with the IT Chapter",
-    messageDescription: "Please describe what you are interested in - events, recruitment, sponsorship, etc.",
+    messagePlaceholder: "Please describe in short what you are interested in - events, recruitment, reception.",
     submit: "Send request",
     submitting: "Sending...",
     error: "An error occurred",
@@ -320,7 +319,7 @@ export default {
   },
   CompanyInfoCard: {
     title: "Contact & Product Catalog",
-    emailSection: "Don't hesitate to contact us if you have any questions",
+    emailSection: "Don't hesitate to contact us if you have any questions!",
     sendEmail: "Send email",
     catalogSection: "Our product catalog",
     catalogDescription: "These are ready-made package suggestions and of course we are open to tailor something that suits your company!",
@@ -329,7 +328,7 @@ export default {
     openCatalog: "Open catalog",
     whyTitle: "Why collaborate with us?",
     why1: "Reach over 1000 IT students",
-    why2: "Tomorrow's engineers and developers",
-    why3: "Events, recruitment & sponsorship",
+    why2: "An opportunity to inspire 200+ new students yeach year",
+    why3: "Connect with future IT talent",
   },
 } as const;

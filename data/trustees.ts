@@ -52,7 +52,7 @@ export const boardTrustees: Trustee[] = [
     name: "Maitreyi Muralidhar",
     role: "KommA",
     mail: "komma@kth.it",
-    committeeIds: ["komma", "board"],
+    committeeIds: ["kommn", "board"],
   },
   {
     name: "Madelaine Bunao",
@@ -115,6 +115,7 @@ export const committeeTrustees: Trustee[] = [
     name: "Alfred Erlandsson",
     role: "vice President of the JML Committee",
     mail: "jml@kth.it",
+    image: "/assets/img/trustees/AlfredErlandsson.webp",
     committeeIds: ["jml"],
   },
   {
@@ -122,13 +123,13 @@ export const committeeTrustees: Trustee[] = [
     role: "vKommA",
     mail: "vkomma@kth.it",
     image: "/assets/img/trustees/elinaw.avif",
-    committeeIds: ["komma"],
+    committeeIds: ["kommn"],
   },
   {
     name: "Hugo Bachér",
     role: "History Responsible",
     mail: "historia@kth.it",
-    committeeIds: ["komma"],
+    committeeIds: ["kommn"],
     image: "/assets/img/trustees/hugob.avif",
   },
   {
@@ -243,25 +244,29 @@ export const committeeTrustees: Trustee[] = [
   {
     name: "Frans Ekberg",
     role: "Head Responsible Safety Officer",
-    mail: "sso@kth.it",
+    mail: "fransekberg@kth.it",
+    image: "/assets/img/trustees/FransEkberg.webp",
     committeeIds: ["sso"],
   },
   {
     name: "Agnes Lind",
     role: "Safety Officer",
-    mail: "sso@kth.it",
+    mail: "agneslind@kth.it",
+    image: "/assets/img/trustees/AgnesLind.webp",
     committeeIds: ["sso"],
   },
   {
     name: "Alfred Erlandsson",
     role: "Safety Officer",
-    mail: "sso@kth.it",
+    mail: "alfrederlandsson@kth.it",
+    image: "/assets/img/trustees/AlfredErlandsson.webp",
     committeeIds: ["sso"],
   },
   {
     name: "Evelina Fridmane",
     role: "Safety Officer",
-    mail: "sso@kth.it",
+    mail: "evelinafridmane@kth.it",
+    image: "/assets/img/trustees/EvelinaFridmane.webp",
     committeeIds: ["sso"],
   },
   {

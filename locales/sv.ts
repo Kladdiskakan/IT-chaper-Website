@@ -279,6 +279,7 @@ export default {
     "Documents.StatutesBylaws.description":
       "Läs de viktiga dokumenten som styr sektionens verksamhet.",
     Contact: "Kontakt",
+    Business: "För Företag",
     Search: "Sök",
   },
   Footer: {

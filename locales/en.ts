@@ -282,6 +282,7 @@ export default {
     "Documents.StatutesBylaws.description":
       "Read the important documents that govern the operations of the chapter.",
     Contact: "Contact",
+    Business: "For Business",
     Search: "Search",
   },
   Footer: {

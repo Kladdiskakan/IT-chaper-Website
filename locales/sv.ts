@@ -24,8 +24,6 @@ export default {
         content:
           "Intresserad av att samarbeta med IT-sektionen? Klicka på \"Läs mer\" nedan för mer information och kontaktuppgifter till Näringslivsnämnden.", 
       },
-
-
     },
     News: {
       title: "Senaste nytt",
@@ -316,7 +314,6 @@ export default {
     phonePlaceholder: "Ange telefonnummer",
     message: "Meddelande",
     messagePlaceholder: "Beskriv lite kort vad ni är intresserade av - evenemang, rekrytering, mottagning.",
-
     submit: "Skicka förfrågan",
     submitting: "Skickar...",
     error: "Ett fel uppstod",

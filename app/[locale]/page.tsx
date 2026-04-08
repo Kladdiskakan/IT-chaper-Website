@@ -114,7 +114,6 @@ export default async function Home({
             </CardAction>
           </CardFooter>
         </Card>
-
         <Card>
           <CardHeader>
             <CardTitle>
@@ -133,7 +132,6 @@ export default async function Home({
             </CardAction>
           </CardFooter>
         </Card>
-
         <Card>
           <CardHeader>
             <CardTitle>
@@ -153,7 +151,6 @@ export default async function Home({
           </CardFooter>
         </Card>
       </section>
-
       <section>
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-2xl font-medium flex items-center gap-3">

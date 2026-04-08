@@ -95,6 +95,22 @@ const DesktopNavbar = async () => {
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
+            
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                className={cn(navigationMenuTriggerStyle())}
+                asChild
+              >
+                <Link href="/contact" passHref>
+                  {t("Contact")}
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+
+
+
           </NavigationMenuList>
         </NavigationMenu>
         <Search />

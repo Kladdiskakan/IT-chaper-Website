@@ -19,6 +19,13 @@ export default {
         content:
           "Utöver studiebevakning arrangerar sektionen en uppsjö med aktiviteter utanför studierna så som pubar, brädspelskvällar, idrottsevenemang och LAN.",
       },
+      Business: {
+        title: "För företag",
+        content:
+          "Intresserad av att samarbeta med IT-sektionen? Klicka på \"Läs mer\" nedan för mer information och kontaktuppgifter till Näringslivsnämnden.", 
+      },
+
+
     },
     News: {
       title: "Senaste nytt",

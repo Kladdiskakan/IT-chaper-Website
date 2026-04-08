@@ -23,7 +23,7 @@ import {
   EmptyTitle,
 } from "@/components/ui/empty";
 import { Hero, HeroContent, HeroImage } from "@/components/ui/hero";
-//import { listAllCommitteeEvents } from "@/lib/committees/events";
+import { listAllCommitteeEvents } from "@/lib/committees/events";
 import { CalendarEvent } from "@/lib/events";
 import { getScopedI18n, getStaticParams } from "@/locales/server";
 import {
@@ -49,7 +49,7 @@ export default async function Home({
   const t = await getScopedI18n("HomePage");
   const commonT = await getScopedI18n("Common");
 
-  //const events: CalendarEvent[] = await listAllCommitteeEvents();
+  const events: CalendarEvent[] = await listAllCommitteeEvents();
 
   return (
     <>
@@ -131,26 +131,8 @@ export default async function Home({
             </CardAction>
           </CardFooter>
         </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>
-              <SchoolIcon />
-              {t("Cards.Education.title")}
-            </CardTitle>
-            <CardDescription>{t("Cards.Education.content")}</CardDescription>
-          </CardHeader>
-          <CardFooter>
-            <CardAction>
-              <Button asChild variant="ghost">
-                <Link href="/foretag">
-                  {commonT("read-more")} <ArrowRightIcon />
-                </Link>
-              </Button>
-            </CardAction>
-          </CardFooter>
-        </Card>
       </section>
-            
+
       <section>
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-2xl font-medium flex items-center gap-3">
@@ -161,7 +143,28 @@ export default async function Home({
             <Link href="/events">View all</Link>
           </Button>
         </div>
-      
+        {events.length > 0 ? (
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+          >
+            <CarouselContent>
+              {events.map((event) => (
+                <CarouselItem
+                  className="md:basis-1/2 lg:basis-1/4"
+                  key={event.id}
+                >
+                  <EventCard event={event} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="space-x-3 mt-4">
+              <CarouselPrevious className="static translate-0" />
+              <CarouselNext className="static translate-0" />
+            </div>
+          </Carousel>
+        ) : (
           <Empty>
             <EmptyHeader>
               <EmptyTitle>{t("News.no-news")}</EmptyTitle>
@@ -201,7 +204,7 @@ export default async function Home({
               </div>
             </EmptyContent>
           </Empty>
-        )
+        )}
       </section>
     </>
   );

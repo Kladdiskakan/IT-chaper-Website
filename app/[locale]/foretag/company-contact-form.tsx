@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useI18n } from "@/locales/client";
+import { CompanyContactData } from "@/types/committee/brc";
 
 export function CompanyContactForm() {
   const t = useI18n();
@@ -22,7 +23,7 @@ export function CompanyContactForm() {
     },
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: CompanyContactData) => {
     setIsSubmitting(true);
     setSubmitMessage(null);
     setIsSuccess(false);

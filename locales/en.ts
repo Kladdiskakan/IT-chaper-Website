@@ -19,21 +19,11 @@ export default {
         content:
           "Aside from study quality assurance, the chapter provides a plethora of extracurricular activities such as pubs, board game nights, sports events and LAN parties.",
       },
-
-
-
-
       Business: {
         title: "For Companies",
         content:
           "Looking to engage with the IT-Chapter? Click \"Read more\" below to find more information and contact details to the Business Relations Committee.",
       },
-
-
-
-
-
-
     },
     News: {
       title: "Latest news",

@@ -236,6 +236,90 @@ export default {
       last: "Senast uppdaterad",
     },
   },
+  
+
+
+
+
+  CompaniesPage: {
+    title: "För Företag",
+    heading: { 
+      content: [
+        "Vill du och ditt företag synas för tusentals IT-Studenter?",
+        "Då har du kommit till rätt ställe!"
+      ],
+    },
+    intro: {
+      content: [
+      "IT-Sektionen är en sektion som representerar över 1000 studenter som studerar inom följande program:",
+      "Vi skräddarsyr gärna ett upplägg som passar just era mål och plånbok.", 
+      "Du kan även ta en titt i vår produktkatalog för att se färdiga paket, erbjudanden och inspiration till hur ert företag skulle kunna synas mot våra studenter.",
+      "Nedan finns övergripande information av våra mest förekommande former av samarbeten.",
+      "Har ni en unik idé som ni tror att våra studenter skulle uppskatta? Tveka inte att höra av er! Vi ser fram emot att hitta en lösning som passar just er!",
+    ]},
+    programs: {
+      CINTE:"Civilingenjör i informationsteknik",
+      TIDAB:"Högskoleingenjör i datateknik",
+      TCOMK:"Internationell kandidat inom informations- och kommunikationsteknik",
+    },
+    events: {
+      title: "Evenemang",
+      content: [
+        "Det finns massvis med möjligheter att anordna evenemang. Här är några exempel på hur andra företag har valt att göra det tidigare:",
+        "Ni är varmt välkomna att föreslå andra typer av evenemang. Mer information om att anordna evenemang hittar ni i produktkatalogen.",
+      ],
+      eventtypes :[
+        "Lunchföreläsningar:",
+        "Studiebesök:",
+        "Case-kväll:",
+        "Pub & kvällshäng:",
+      ],
+      eventdecription:[
+        "Håll ett pass under studenternas lunchtid för att presentera ert företag eller dela med er av branschinsikter och knyta direktkontakt med studenterna.",
+        "Visa upp ert företag genom att bjuda in oss för en titt bakom kulisserna på er arbetsplats.",
+        "Få direkt insyn i studenternas problemlösningsförmåga genom verklighetsbaserade utmaningar, samtidigt som ni marknadsför ert företag.",
+        "Mingla i vår legendariska sektionslokal Kistan 2.0! Detta är ett avslappnat socialt evenemang där ni kan skapa meningsfulla kontakter med våra studenter.",
+      ],
+    },
+    realitycheck : {
+      title: "Reality check - Träffa våra Master studenter",
+      content: [
+        "Vi arrangerar även Reality Check, vårt eget koncept som riktar sig specifikt till masterstudenter.",
+        "Detta är er möjlighet att nätverka med ambitiösa studenter som står redo att ta klivet ut i arbetslivet.",
+        "Att anordna ett sådant här evenemang är ett utmärkt sätt att identifiera framtida medarbetare i inspirerande och engagerande miljöer.",
+      ]
+    },
+    reception: {
+      title: "Mottagningen - Träffa våra nya studenter",
+      content: [
+        "Under 3 intensiva veckor i augusti tar vi emot cirka 260 nya studenter till sektionen.",
+        "Tillsammans med ytterligare 50 äldre studenter som hjälper till att arrangera är Mottagningen en utmärkt möjlighet för ditt företag att synas.",
+        "Deltagande för företagen kan vara allt mellan att hålla studiebesök och deltaga på mottagningsevent till att synas på merch och i våra sociala medier.",
+        "Som alltid välkomnar vi även egna idéer och förslag!",
+      ]
+    },
+    marketing:{
+      title: "Marknadsföring",
+      content: [
+        "Nå ut till över 3 000 studenter via våra kanaler",
+        "inklusive Instagram, LinkedIn, Discord och Facebook. och visa upp ert företag direkt framför framtidens ingenjörer.",
+        "Detta är den perfekta plattformen för att marknadsföra lediga tjänster, lyfta fram ansökningsperioder eller visa ert stöd för IT-sektionen på KTH.",
+        "Utöver digitala kanalerna finns även möjlighet att synas på våran kan ert varumärke även synas på välbesökta fysiska platser, såsom sektions-TV:n och via affischer runt om i sektionslokalen.",
+      ]
+    },
+  },
+
+
+
+
+
+
+
+
+
+
+
+
   Statutes: {
     title: "Stadgar",
     subtitle: "Detta är sektionens stadgar. De är våra styrdokument.",

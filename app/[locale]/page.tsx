@@ -117,24 +117,6 @@ export default async function Home({
         <Card>
           <CardHeader>
             <CardTitle>
-              <Handshake />
-              {t("Cards.Business.title")}
-            </CardTitle>
-            <CardDescription>{t("Cards.Business.content")}</CardDescription>
-          </CardHeader>
-          <CardFooter>
-            <CardAction>
-              <Button asChild variant="ghost">
-                <Link href="/foretag">
-                  {commonT("read-more")} <ArrowRightIcon />
-                </Link>
-              </Button>
-            </CardAction>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>
               <ZapIcon />
               {t("Cards.Chapter.title")}
             </CardTitle>
@@ -144,6 +126,24 @@ export default async function Home({
             <CardAction>
               <Button asChild variant="ghost">
                 <Link href="/chapter">
+                  {commonT("read-more")} <ArrowRightIcon />
+                </Link>
+              </Button>
+            </CardAction>
+          </CardFooter>
+        </Card>
+                 <Card>
+          <CardHeader>
+            <CardTitle>
+              <Handshake />
+              {t("Cards.Business.title")}
+            </CardTitle>
+            <CardDescription>{t("Cards.Business.content")}</CardDescription>
+          </CardHeader>
+          <CardFooter>
+            <CardAction>
+              <Button asChild variant="ghost">
+                <Link href="/companies">
                   {commonT("read-more")} <ArrowRightIcon />
                 </Link>
               </Button>

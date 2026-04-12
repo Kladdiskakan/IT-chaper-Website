@@ -36,19 +36,17 @@ export const siteConfig: Record<string, SiteConfig> = {
       "The Chapter for Information Technology at KTH - One of the largest chapters within the Tekniska Högskolans Studentkår (THS Student Union) in Stockholm.",
     shortDescription: "The Chapter for Information Technology at KTH",
     url: process.env.URL!,
-    ogImage:
-      "/api/og?title=IT-Chapter&description=The Chapter for Information Technology",
+    ogImage: "/api/og?title=IT-Chapter&description=KTH - Sweden",
     locale: "en_US",
     alternateLocale: "sv_SE",
   },
   sv: {
-    name: "IT-Sektionen",
+    name: "Kongliga IT-Sektionen",
     description:
       "Kongliga Sektionen för Informationsteknik på KTH - En av de största sektionerna inom Tekniska Högskolans Studentkår (THS) i Stockholm.",
     shortDescription: "Kongliga Sektionen för Informationsteknik på KTH",
     url: process.env.URL!,
-    ogImage:
-      "/api/og?title=IT-Sektionen&description=Kongliga Sektionen för Informationsteknik",
+    ogImage: "/api/og?title=IT-Sektionen&description=KTH - Sverige",
     locale: "sv_SE",
     alternateLocale: "en_US",
   },
@@ -72,12 +70,17 @@ export function generatePageMetadata({
   canonical,
 }: PageMetadata): Metadata {
   const config = siteConfig[locale] || siteConfig.sv;
-  const fullTitle = title === config.name ? title : `${title} | ${config.name}`;
-  const ogImage = image || getOgImageUrl(title, description);
+  const fullTitle =
+    title === ""
+      ? config.name
+      : title === config.name
+        ? title
+        : `${title} | ${config.name}`;
+  const ogImage = image || getOgImageUrl(config.name, title);
   const fullImageUrl = ogImage.startsWith("http")
     ? ogImage
     : `${config.url}${ogImage}`;
-  const imageDescription = imageAlt || `${title} | ${config.name}`;
+  const imageDescription = imageAlt || fullTitle;
 
   const defaultKeywords = [
     "Kongliga Sektionen för Informationsteknik",

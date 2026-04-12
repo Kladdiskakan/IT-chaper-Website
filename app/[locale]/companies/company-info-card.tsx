@@ -20,33 +20,28 @@ export function CompanyInfoCard() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        {/* E-post sektion */}
+        {/* E-post section */}
         <div className="space-y-3">
           <h4 className="font-medium">{t('CompanyInfoCard.emailSection')}</h4>
           <div className="space-y-2">
 
-            <p className="text-sm">
-              <a
-                href="mailto:naringsliv@kth.it"
-                className="text-primary hover:underline break-all"
-              >
-                naringsliv@kth.it
-              </a>
-            </p>
-            <Button
-              variant="outline"
-              size="sm"
-              className="w-full cursor-pointer"
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full cursor-pointer p-0"
             >
-            <Link href="mailto:naringsliv@kth.it">
-              <MailIcon className="mr-2 h-4 w-4 text-muted-foreground" />
-              {t('CompanyInfoCard.sendEmail')}
-             </Link>
-            </Button>
+            <Link 
+              href="mailto:naringsliv@kth.it" 
+              className="flex h-full w-full items-center justify-center gap-2 px-3" // ...och lägger den på länken istället
+            >
+              <MailIcon className="h-4 w-4 text-muted-foreground" />
+              <span>{t('CompanyInfoCard.sendEmail')}</span>
+            </Link>
+        </Button>
           </div>
         </div>
 
-        {/* Produktkatalog sektion */}
+        {/* product catalog section*/}
         <div className="space-y-3">
           <h4 className="font-medium">{t('CompanyInfoCard.catalogSection')}</h4>
           <p className="text-sm text-muted-foreground">
@@ -58,7 +53,6 @@ export function CompanyInfoCard() {
               <FileText className="h-8 w-8 text-primary" />
               <div>
                 <p className="font-medium text-sm">{t('CompanyInfoCard.catalogTitle')}</p>
-                <p className="text-xs text-muted-foreground">{t('CompanyInfoCard.catalogSize')}</p>
               </div>
             </div>
 
@@ -73,7 +67,7 @@ export function CompanyInfoCard() {
           </div>
         </div>
 
-        {/* Ytterligare information */}
+        {/* TL:DR information */}
         <div className="pt-4 border-t">
           <h4 className="font-medium mb-3">{t('CompanyInfoCard.whyTitle')}</h4>
           <div className="space-y-2 text-sm text-muted-foreground">

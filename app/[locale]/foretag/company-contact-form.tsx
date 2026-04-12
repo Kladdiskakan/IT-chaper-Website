@@ -5,7 +5,14 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useI18n } from "@/locales/client";
-import { CompanyContactData } from "@/types/committee/brc";
+
+ const formValues = {
+      companyName: "",
+      contactPerson: "",
+      email: "",
+      phone: "",
+      message: "",
+    }
 
 export function CompanyContactForm() {
   const t = useI18n();
@@ -13,17 +20,11 @@ export function CompanyContactForm() {
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const form = useForm({
-    defaultValues: {
-      companyName: "",
-      contactPerson: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
+  const form = useForm<typeof formValues>({
+    defaultValues: formValues,
   });
 
-  const onSubmit = async (data: CompanyContactData) => {
+  const onSubmit = async (data: typeof formValues) => {
     setIsSubmitting(true);
     setSubmitMessage(null);
     setIsSuccess(false);

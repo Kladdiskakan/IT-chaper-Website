@@ -4,17 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, FileText, ExternalLink } from "lucide-react";
 import { useI18n } from "@/locales/client";
+import  Link  from "next/link";
+import { MailIcon } from "lucide-react";
 
 export function CompanyInfoCard() {
   const t = useI18n();
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:naringsliv@it.kth.se?subject=Företagsförfrågan';
-  };
 
-  const handleCatalogClick = () => {
-    // Öppna PDF i nytt fönster/tab
-    window.open('/assets/files/produktkatalog.pdf', '_blank');
-  };
 
   return (
     <Card className="h-fit sticky top-6">
@@ -32,20 +27,21 @@ export function CompanyInfoCard() {
 
             <p className="text-sm">
               <a
-                href="mailto:naringsliv@it.kth.se"
+                href="mailto:naringsliv@kth.it"
                 className="text-primary hover:underline break-all"
               >
                 naringsliv@kth.it
               </a>
             </p>
             <Button
-              onClick={handleEmailClick}
               variant="outline"
               size="sm"
               className="w-full cursor-pointer"
             >
-              <Mail className="h-4 w-4 mr-2" />
+            <Link href="mailto:naringsliv@kth.it">
+              <MailIcon className="mr-2 h-4 w-4 text-muted-foreground" />
               {t('CompanyInfoCard.sendEmail')}
+             </Link>
             </Button>
           </div>
         </div>
@@ -59,7 +55,7 @@ export function CompanyInfoCard() {
 
           <div className="border rounded-lg p-4 bg-muted/30">
             <div className="flex items-center gap-3 mb-3">
-              <FileText className="h-8 w-8 text-red-500" />
+              <FileText className="h-8 w-8 text-primary" />
               <div>
                 <p className="font-medium text-sm">{t('CompanyInfoCard.catalogTitle')}</p>
                 <p className="text-xs text-muted-foreground">{t('CompanyInfoCard.catalogSize')}</p>
@@ -67,7 +63,7 @@ export function CompanyInfoCard() {
             </div>
 
             <Button
-              onClick={handleCatalogClick}
+              onClick={() => window.open('/assets/files/produktkatalog.pdf', '_blank')}
               className="w-full cursor-pointer"
               size="sm"
             >

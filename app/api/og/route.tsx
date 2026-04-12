@@ -23,119 +23,61 @@ export async function GET(request: NextRequest) {
     join(process.cwd(), "public/assets/fonts/Poppins-Regular.ttf"),
   );
 
-  const bgColor = "#F4F4FC";
-  const borderColor = "1px solid #E0E0EE";
-  const textColor = "#29294B";
-  const themeColor = "#cc99ff";
-
-  return new ImageResponse(
-    (
-      // CONTAINER
+  const response = new ImageResponse(
+    <div
+      style={{
+        background: "#F4F4FC",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "flex-end",
+        position: "relative",
+      }}>
       <div
         style={{
-          fontSize: 80,
-          background: bgColor,
-          color: textColor,
-          width: "100%",
-          height: "100%",
           display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
           flexDirection: "column",
-        }}
-      >
-        {/* TOP SECTION */}
-        <div
+          width: "90%",
+          padding: 30,
+        }}>
+        <p
           style={{
-            height: 50,
-            width: "100%",
-            borderBottom: borderColor,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              height: "100%",
-              width: "90%",
-              borderLeft: borderColor,
-              borderRight: borderColor,
-            }}
-          />
-        </div>
-        <div
+            margin: 0,
+            padding: 0,
+            color: "#cc99ff",
+            fontFamily: "Poppins Bold",
+            fontSize: 80,
+          }}>
+          {title}
+        </p>
+        <p
           style={{
-            flexGrow: 1,
-            display: "flex",
-            width: "100%",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {/* INSIDE */}
-          <div
-            style={{
-              height: "100%",
-              width: "90%",
-              borderLeft: borderColor,
-              borderRight: borderColor,
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "space-between",
-              padding: 30,
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                lineHeight: 0,
-                gap: 100,
-              }}
-            >
-              <p
-                style={{
-                  color: themeColor,
-                  margin: 0,
-                  padding: 0,
-                  fontFamily: "Poppins Bold",
-                }}
-              >
-                {title}
-              </p>
-              <p
-                style={{ margin: 0, padding: 0, fontFamily: "Poppins Regular" }}
-              >
-                {description}
-              </p>
-            </div>
-            <ItChip primary="#cc99ff" size={175} />
-          </div>
-        </div>
-
-        <div
-          style={{
-            height: 50,
-            width: "100%",
-            borderTop: borderColor,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              height: "100%",
-              width: "90%",
-              borderLeft: borderColor,
-              borderRight: borderColor,
-              display: "flex",
-            }}
-          />
-        </div>
+            margin: 0,
+            padding: 0,
+            color: "#29294B",
+            fontFamily: "Poppins Regular",
+            fontSize: 60,
+          }}>
+          {description}
+        </p>
       </div>
-    ),
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          bottom: 0,
+          transform: "translate(-25%, 25%)",
+          display: "flex",
+          opacity: 0.15,
+        }}>
+        <ItChip
+          primary="#cc99ff"
+          secondary="#cc99ff"
+          tertiary="#cc99ff"
+          size={1000}
+        />
+      </div>
+    </div>,
     {
       ...size,
       fonts: [
@@ -154,4 +96,10 @@ export async function GET(request: NextRequest) {
       ],
     },
   );
+
+  response.headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
+  response.headers.set("Pragma", "no-cache");
+  response.headers.set("Expires", "0");
+
+  return response;
 }

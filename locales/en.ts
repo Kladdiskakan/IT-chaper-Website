@@ -306,6 +306,7 @@ export default {
         "Beyond our digital presence, your brand can also be featured in high-visibility physical spaces, including the Chapter TV and posters throughout the chapter hall.",
       ]
     },
+    contactform: "Contact form",
   },
 
 

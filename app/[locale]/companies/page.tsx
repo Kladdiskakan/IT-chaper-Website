@@ -131,7 +131,7 @@ const programLinks = {
               <br />
               </section>
               <div className="text-center pt-8">
-                <h2 className="text-2xl font-strong">Kontaktformulär</h2>
+                <h2 className="text-2xl font-strong">{t("contactform")}</h2>
               <br/>
               </div>
               <CompanyContactForm />

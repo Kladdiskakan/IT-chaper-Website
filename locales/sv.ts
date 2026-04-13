@@ -307,6 +307,7 @@ export default {
         "Utöver digitala kanalerna finns även möjlighet att synas på våran kan ert varumärke även synas på välbesökta fysiska platser, såsom sektions-TV:n och via affischer runt om i sektionslokalen.",
       ]
     },
+    contactform: "Kontaktformulär",
   },
 
 

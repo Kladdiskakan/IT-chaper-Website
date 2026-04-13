@@ -251,7 +251,7 @@ export default {
     },
     intro: {
       content: [
-      "IT-Sektionen är en sektion som representerar över 1000 studenter som studerar inom följande program:",
+      "IT-Sektionen är en sektion som representerar runt 2000 studenter som studerar inom följande program:",
       "Vi skräddarsyr gärna ett upplägg som passar just era mål och plånbok.", 
       "Du kan även ta en titt i vår produktkatalog för att se färdiga paket, erbjudanden och inspiration till hur ert företag skulle kunna synas mot våra studenter.",
       "Nedan finns övergripande information av våra mest förekommande former av samarbeten.",
@@ -413,7 +413,7 @@ export default {
     catalogTitle: "Produktkatalog 2026",
     openCatalog: "Öppna katalog",
     whyTitle: "Varför samarbeta med oss?",
-    why1: "Nå över 1000 IT-studenter",
+    why1: "Nå runt 2000 IT-studenter",
     why2: "Möjlighet att inspirera 200+ nya studenter",
     why3: "Kontakt med framtida IT-talanger",
   },

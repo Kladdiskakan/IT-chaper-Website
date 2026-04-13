@@ -250,7 +250,7 @@ export default {
     },
     intro: {
       content: [
-      "The IT-Chapter represents over 1000 students studying in the following programs:",
+      "The IT-Chapter represents around 2000 students studying in the following programs:",
       "We are happy to tailor a collaboration that aligns with your specific goals and budget.", 
       "You can also browse our product catalog to explore ready-made packages, special offers, and inspiration on how your company can increase its visibility among our students.",
       "You can find an overview of our most common forms of collaboration below.",
@@ -407,7 +407,7 @@ export default {
     catalogTitle: "Product Catalog 2026",
     openCatalog: "Open catalog",
     whyTitle: "Why collaborate with us?",
-    why1: "Reach over 1000 IT students",
+    why1: "Reach around 2000 IT students",
     why2: "An opportunity to inspire 200+ new students each year",
     why3: "Connect with future IT talent",
   },

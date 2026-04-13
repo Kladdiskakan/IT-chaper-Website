@@ -358,7 +358,9 @@ export default {
     "Documents.StatutesBylaws.description":
       "Read the important documents that govern the operations of the chapter.",
     Contact: "Contact",
-    Business: "For Companies",
+    CompaniesPage: "For Companies",
+    "CompaniesPage.title" : "For Companies",
+    "CompaniesPage.description" : "Looking to engage with the IT-Chapter? Click here to find more information and contact details to the Business Relations Committee.",
     Search: "Search",
   },
   Footer: {

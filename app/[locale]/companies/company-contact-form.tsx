@@ -1,5 +1,4 @@
 "use client"
-
 import { Form, FormItem, FormLabel, FormControl, FormMessage, FormField } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
@@ -14,7 +13,7 @@ import { useI18n } from "@/locales/client";
       message: "",
     }
 
-export function CompanyContactForm() {
+    export function CompanyContactForm() {
   const t = useI18n();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
@@ -36,7 +35,6 @@ export function CompanyContactForm() {
         },
         body: JSON.stringify(data),
       });
-
       const result = await response.json();
 
       if (response.ok) {
@@ -54,114 +52,107 @@ export function CompanyContactForm() {
     }
   };
 
-  return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 max-w-3xl mx-auto">
-        <div className="grid gap-6 sm:grid-cols-2">
-          <FormField
-            control={form.control}
-            name="companyName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('CompanyForm.companyName')}</FormLabel>
-                <FormControl>
-                  <input
-                    {...field}
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder={t('CompanyForm.companyNamePlaceholder')}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="contactPerson"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('CompanyForm.contactPerson')}</FormLabel>
-                <FormControl>
-                  <input
-                    {...field}
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder={t('CompanyForm.contactPersonPlaceholder')}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('CompanyForm.email')}</FormLabel>
-                <FormControl>
-                  <input
-                    {...field}
-                    type="email"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder={t('CompanyForm.emailPlaceholder')}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('CompanyForm.phone')}</FormLabel>
-                <FormControl>
-                  <input
-                    {...field}
-                    type="tel"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder={t('CompanyForm.phonePlaceholder')}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-
+return (
+  <Form {...form}>
+    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 max-w-3xl mx-auto">
+      <div className="grid gap-6 sm:grid-cols-2">
         <FormField
           control={form.control}
-          name="message"
+          name="companyName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('CompanyForm.message')}</FormLabel>
+              <FormLabel>{t('CompanyForm.companyName')}</FormLabel>
               <FormControl>
-                <textarea
+                <input
                   {...field}
-                  className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  placeholder={t('CompanyForm.messagePlaceholder')}
-                  rows={4}
+                  className="h-10 w-full rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  placeholder={t('CompanyForm.companyNamePlaceholder')}
                 />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-
-        <Button type="submit" className="w-full cursor-pointer" disabled={isSubmitting}>
-          {isSubmitting ? t('CompanyForm.submitting') : t('CompanyForm.submit')}
-        </Button>
-
-        {submitMessage && (
-          <div className={`mt-4 p-4 rounded-md ${isSuccess ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
-            {submitMessage}
-          </div>
+        <FormField
+          control={form.control}
+          name="contactPerson"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t('CompanyForm.contactPerson')}</FormLabel>
+              <FormControl>
+                <input
+                  {...field}
+                  className="h-10 w-full rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  placeholder={t('CompanyForm.contactPersonPlaceholder')}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t('CompanyForm.email')}</FormLabel>
+              <FormControl>
+                <input
+                  {...field}
+                  type="email"
+                  className="h-10 w-full rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  placeholder={t('CompanyForm.emailPlaceholder')}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t('CompanyForm.phone')}</FormLabel>
+              <FormControl>
+                <input
+                  {...field}
+                  type="tel"
+                  className="h-10 w-full rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  placeholder={t('CompanyForm.phonePlaceholder')}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </div>
+      <FormField
+        control={form.control}
+        name="message"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>{t('CompanyForm.message')}</FormLabel>
+            <FormControl>
+              <textarea
+                {...field}
+                className="min-h-[80px]border-input w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                placeholder={t('CompanyForm.messagePlaceholder')}
+                rows={4}
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
         )}
-      </form>
-    </Form>
-  );
-}
+      />
+      <Button type="submit" className="w-full cursor-pointer" disabled={isSubmitting}>
+        {isSubmitting ? t('CompanyForm.submitting') : t('CompanyForm.submit')}
+      </Button>
+      {submitMessage && (
+        <div className={`mt-4 p-4 rounded-md ${isSuccess ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+          {submitMessage}
+        </div>
+      )}
+    </form>
+  </Form>
+);}

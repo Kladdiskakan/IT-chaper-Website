@@ -91,7 +91,7 @@ const DesktopNavbar = async () => {
                 asChild
               >
                 <Link href="/companies" passHref>
-                  {t("Business")}
+                  {t("CompaniesPage")}
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>

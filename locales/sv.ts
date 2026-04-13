@@ -364,7 +364,9 @@ export default {
     "Documents.StatutesBylaws.description":
       "Läs de viktiga dokumenten som styr sektionens verksamhet.",
     Contact: "Kontakt",
-    Business: "För Företag",
+    CompaniesPage: "För Företag",
+    "CompaniesPage.title" : "För Företag",
+    "CompaniesPage.description" : "Intresserad av att samarbeta med IT-sektionen? Klicka på här för mer information och kontaktuppgifter till Näringslivsnämnden.",
     Search: "Sök",
   },
   Footer: {

@@ -414,7 +414,7 @@ export default {
     catalogTitle: "Produktkatalog 2026",
     openCatalog: "Öppna katalog",
     whyTitle: "Varför samarbeta med oss?",
-    why1: "Nå runt 2000 IT-studenter",
+    why1: "Nå 2000 IT-studenter",
     why2: "Möjlighet att inspirera 200+ nya studenter",
     why3: "Kontakt med framtida IT-talanger",
   },

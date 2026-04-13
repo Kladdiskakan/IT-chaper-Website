@@ -408,7 +408,7 @@ export default {
     catalogTitle: "Product Catalog 2026",
     openCatalog: "Open catalog",
     whyTitle: "Why collaborate with us?",
-    why1: "Reach around 2000 IT students",
+    why1: "Reach 2000 IT students",
     why2: "An opportunity to inspire 200+ new students each year",
     why3: "Connect with future IT talent",
   },

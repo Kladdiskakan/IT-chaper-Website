@@ -22,7 +22,7 @@ export default {
       Business: {
         title: "For Companies",
         content:
-          "Looking to engage with the IT-Chapter? Click \"Read more\" below to find more information and contact details to the Business Relations Committee.",
+          'Looking to engage with the IT-Chapter? Click "Read more" below to find more information and contact details to the Business Relations Committee.',
       },
     },
     News: {
@@ -239,27 +239,27 @@ export default {
     },
   },
 
-
   CompaniesPage: {
     title: "For Companies",
-    heading: { 
+    heading: {
       content: [
         "Do you want your company to be visible to thousands of IT students?",
-        "Then you have come to the right place!"
+        "Then you have come to the right place!",
       ],
     },
     intro: {
       content: [
-      "The IT-Chapter represents around 2000 students studying in the following programs:",
-      "We are happy to tailor a collaboration that aligns with your specific goals and budget.", 
-      "You can also browse our product catalog to explore ready-made packages, special offers, and inspiration on how your company can increase its visibility among our students.",
-      "You can find an overview of our most common forms of collaboration below.",
-      "If you have a unique idea that you think our students would appreciate, don’t hesitate to reach out! We look forward to finding a solution that fits your needs perfectly.",
-    ]},
+        "The IT-Chapter represents around 2000 students studying in the following programs:",
+        "We are happy to tailor a collaboration that aligns with your specific goals and budget.",
+        "You can also browse our product catalog to explore ready-made packages, special offers, and inspiration on how your company can increase its visibility among our students.",
+        "You can find an overview of our most common forms of collaboration below.",
+        "If you have a unique idea that you think our students would appreciate, don’t hesitate to reach out! We look forward to finding a solution that fits your needs perfectly.",
+      ],
+    },
     programs: {
-      CINTE:"Degree Programme in Information and Communication Technology",
-      TIDAB:"Degree Programme in Computer Engineering",
-      TCOMK:"Bachelor's Programme in Information and Communication Technology",
+      CINTE: "Degree Programme in Information and Communication Technology",
+      TIDAB: "Degree Programme in Computer Engineering",
+      TCOMK: "Bachelor's Programme in Information and Communication Technology",
     },
     events: {
       title: "Events",
@@ -267,26 +267,26 @@ export default {
         "There are plenty of opportunities to host events. Here are some of the ways companies have done so in the past:",
         "You are welcome to suggest your own event. Find more information on hosting an event in the product catalog.",
       ],
-      eventtypes :[
+      eventtypes: [
         "Lunch Lectures:",
         "Company Visits:",
         "Case Night:",
         "Pub & Evening:",
       ],
-      eventdecription:[
+      eventdecription: [
         "Host a session during students’ lunchtime to present your company or share industry insights to connect with students directly.",
         "Showcase your company culture to the students by inviting us for a behind the scenes look at your workplace.",
         "Gain direct insight into students’ problem-solving abilities with real world challenges, while promoting your company.",
         "Mingle in our legendary student chapter hall Kistan 2.0! This is a relaxed social event where you can build meaningful connections with our students.",
       ],
     },
-    realitycheck : {
+    realitycheck: {
       title: "Reality check - Meet our master students",
       content: [
         "We also host Reality Check, our signature event format focused on master's students.",
         "This is your opportunity to network with ambitious students who are eagerly stepping into the job market.",
         "Hosting this type of event is a great way to identify potential future employees in inspiring and exciting settings.",
-      ]
+      ],
     },
     reception: {
       title: "Reception - Meet our new students",
@@ -295,24 +295,19 @@ export default {
         "Together with another 50 older students who help organize, the Reception is an excellent opportunity for companies to get exposure.",
         "Participation for companies can include company visits, sponsorships and being featured on merch and our social media.",
         "As always, we welcome more ideas!",
-      ]
+      ],
     },
-    marketing:{
+    marketing: {
       title: "Marketing",
       content: [
         "Reach over 3,000 students across our channels",
         "inclding Instagram, LinkedIn, Discord and Facebook, and position your company directly in front of future talent.",
         "This is the perfect platform to promote job openings, highlight application opportunities, or showcase your support for the IT-Chapter at KTH.",
         "Beyond our digital presence, your brand can also be featured in high-visibility physical spaces, including the Chapter TV and posters throughout the chapter hall.",
-      ]
+      ],
     },
     contactform: "Contact form",
   },
-
-
-
-
-
 
   Statutes: {
     title: "Statutes",
@@ -359,8 +354,9 @@ export default {
       "Read the important documents that govern the operations of the chapter.",
     Contact: "Contact",
     CompaniesPage: "For Companies",
-    "CompaniesPage.title" : "For Companies",
-    "CompaniesPage.description" : "Looking to engage with the IT-Chapter? Click here to find more information and contact details to the Business Relations Committee.",
+    "CompaniesPage.title": "For Companies",
+    "CompaniesPage.description":
+      "Looking to engage with the IT-Chapter? Click here to find more information and contact details to the Business Relations Committee.",
     Search: "Search",
   },
   Footer: {
@@ -395,7 +391,8 @@ export default {
     phone: "Phone",
     phonePlaceholder: "Enter phone number",
     message: "Message",
-    messagePlaceholder: "Please describe in short what you are interested in - events, recruitment, reception.",
+    messagePlaceholder:
+      "Please describe in short what you are interested in - events, recruitment, reception.",
     submit: "Send request",
     submitting: "Sending...",
     error: "An error occurred",
@@ -406,7 +403,8 @@ export default {
     emailSection: "Don't hesitate to contact us if you have any questions!",
     sendEmail: "Send email",
     catalogSection: "Our product catalog",
-    catalogDescription: "These are ready-made packages but we are of course open to tailor something that suits your company!",
+    catalogDescription:
+      "These are ready-made packages but we are of course open to tailor something that suits your company!",
     catalogTitle: "Product Catalog 2026",
     openCatalog: "Open catalog",
     whyTitle: "Why collaborate with us?",

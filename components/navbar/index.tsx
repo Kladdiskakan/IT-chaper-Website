@@ -90,6 +90,16 @@ const DesktopNavbar = async () => {
                 className={cn(navigationMenuTriggerStyle())}
                 asChild
               >
+                <Link href="/companies" passHref>
+                  {t("CompaniesPage")}
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                className={cn(navigationMenuTriggerStyle())}
+                asChild
+              >
                 <Link href="/contact" passHref>
                   {t("Contact")}
                 </Link>

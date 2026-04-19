@@ -10,7 +10,7 @@ export function CompanyInfoCard() {
   const t = useI18n();
 
   return (
-    <Card className="h-fit sticky top-6">
+    <Card className="h-fit sticky top-24">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Mail className="h-5 w-5" />

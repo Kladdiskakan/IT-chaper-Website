@@ -7,13 +7,29 @@ import {
   BrcProtocol,
 } from "./types";
 
+const brcAuthHeaders = {
+  Authorization: `Bearer ${env.BRC_API_KEY}`,
+};
+
 const brcIntegration: CommitteeIntegration = {
   listEvents: async () => {
     try {
-      const res = await fetch(`${env.BRC_base_url}/event/pubs/public/json`);
-      const data: BrcEvent[] = await res.json();
+      const res = await fetch(`${env.BRC_base_url}/rest/eventsCustom`, {
+        headers: brcAuthHeaders,
+      });
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
 
-      return data
+
+
+
+
+      const jsonResponse = await res.json();
+      const eventsList = jsonResponse?.data?.eventsCustom || [];
+      console.log("Fetched BRC events:", eventsList);
+
+      return eventsList
         .map(mapBrcEvent)
         .sort(
           (a, b) =>
@@ -27,7 +43,9 @@ const brcIntegration: CommitteeIntegration = {
   },
   getEvent: async (id: string) => {
     try {
-      const res = await fetch(`${env.BRC_base_url}/event/pubs/public/json`);
+      const res = await fetch(`${env.BRC_base_url}/rest/eventsCustom`, {
+        headers: brcAuthHeaders,
+      });
       const data: BrcEvent[] = await res.json();
 
       const event = data.find((event) => event.id === Number(id));
@@ -38,9 +56,12 @@ const brcIntegration: CommitteeIntegration = {
       return undefined;
     }
   },
+  /*
   listProtocols: async () => {
     try {
-      const res = await fetch(`${env.BRC_base_url}/protocol/view`);
+      const res = await fetch(`${env.BRC_base_url}/protocol/view`, {
+        headers: brcAuthHeaders,
+      });
       const data: BrcProtocol[] = await res.json();
 
       const protocols = data
@@ -55,7 +76,7 @@ const brcIntegration: CommitteeIntegration = {
       console.error("Error listing BRC protocols", error);
       return [];
     }
-  },
+  },*/
 };
 
 export default brcIntegration;

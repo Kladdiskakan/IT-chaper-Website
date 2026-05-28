@@ -6,8 +6,7 @@ export type BrcEvent = {
   name: string;
   type: string;
   image: string;
-  start: string;
-  end: string;
+  date: string;
   info: string;
   location: string;
 };
@@ -15,11 +14,10 @@ export type BrcEvent = {
 export const mapBrcEvent = (BrcEvent: BrcEvent): CalendarEvent => ({
   id: `brc-${BrcEvent.id}`,
   title: BrcEvent.name,
-  start: new Date(BrcEvent.start),
-  end: new Date(BrcEvent.end),
+  start: new Date(BrcEvent.date),
   description: BrcEvent.info,
-  location: BrcEvent.location,
-  imageUrl: BrcEvent.image == "" ? undefined : BrcEvent.image,
+  location: BrcEvent.location?.addressStreet1,
+  imageUrl: BrcEvent.image == "" ? undefined : BrcEvent.image?.primaryLinkUrl,
   committeeSlug: "brc",
 });
 

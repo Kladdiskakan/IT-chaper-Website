@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "minio.qmisk.com",
       },
+      {
+        hostname: 'drive.google.com',
+      },
     ],
   },
   redirects: async () => [

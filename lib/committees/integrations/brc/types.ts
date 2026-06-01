@@ -1,14 +1,21 @@
 import { CalendarEvent } from "@/types";
-import { Protocol } from "@/types";
+
+export type BrcLocation = {
+  addressStreet1: string;
+};
+
+export type BrcImage = {
+  primaryLinkUrl: string;
+};
 
 export type BrcEvent = {
-  id: number;
+  id: string;
   name: string;
   type: string;
-  image: string;
+  image: BrcImage;
   date: string;
-  info: string;
-  location: string;
+  info: string; 
+  location: BrcLocation;
 };
 
 export const mapBrcEvent = (BrcEvent: BrcEvent): CalendarEvent => ({
@@ -17,22 +24,6 @@ export const mapBrcEvent = (BrcEvent: BrcEvent): CalendarEvent => ({
   start: new Date(BrcEvent.date),
   description: BrcEvent.info,
   location: BrcEvent.location?.addressStreet1,
-  imageUrl: BrcEvent.image == "" ? undefined : BrcEvent.image?.primaryLinkUrl,
+  imageUrl: BrcEvent.image?.primaryLinkUrl,
   committeeSlug: "brc",
-});
-
-export type BrcProtocol = {
-  id: number;
-  name: string;
-  upload_date: string;
-  actions: {
-    view_pdf: string;
-  };
-};
-
-export const mapBrcProtocol = (brcProtocol: BrcProtocol): Protocol => ({
-  id: brcProtocol.id,
-  name: brcProtocol.name,
-  date: new Date(brcProtocol.upload_date),
-  url: brcProtocol.actions.view_pdf,
 });

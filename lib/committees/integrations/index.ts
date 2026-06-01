@@ -5,6 +5,7 @@ import { itkIntegration } from "./itk";
 import { tmeitIntegration } from "./tmeit";
 import { CommitteeSlug } from "@/data/committees";
 import { receptionIntegration } from "./reception";
+import brcIntegration from "./brc";
 
 export interface CommitteeIntegration {
   listEvents: () => Promise<CalendarEvent[]>;
@@ -18,6 +19,7 @@ export const committeeIntegrations: Partial<
   qmisk: qmiskIntegration,
   tmeit: tmeitIntegration,
   itk: itkIntegration,
+  brc: brcIntegration,
 };
 
 export const committeeIntegrationSlugs = Object.keys(

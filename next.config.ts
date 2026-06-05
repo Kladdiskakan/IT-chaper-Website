@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
         hostname: "minio.qmisk.com",
       },
       {
-        hostname: 'drive.google.com',
+        hostname: 'crm.kth.it',
       },
     ],
   },

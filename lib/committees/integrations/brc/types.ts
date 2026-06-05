@@ -5,25 +5,31 @@ export type BrcLocation = {
 };
 
 export type BrcImage = {
-  primaryLinkUrl: string;
+  url: string;
 };
 
 export type BrcEvent = {
   id: string;
   name: string;
   type: string;
-  image: BrcImage;
+  image: BrcImage[];
   date: string;
   info: string; 
   location: BrcLocation;
 };
 
-export const mapBrcEvent = (BrcEvent: BrcEvent): CalendarEvent => ({
-  id: `brc-${BrcEvent.id}`,
-  title: BrcEvent.name,
-  start: new Date(BrcEvent.date),
-  description: BrcEvent.info,
-  location: BrcEvent.location?.addressStreet1,
-  imageUrl: BrcEvent.image?.primaryLinkUrl,
-  committeeSlug: "brc",
-});
+export const mapBrcEvent = (BrcEvent: BrcEvent): CalendarEvent => {
+  const imageUrl = Array.isArray(BrcEvent.image)
+    ? BrcEvent.image[0]?.url
+    : undefined;
+
+  return {
+    id: `brc-${BrcEvent.id}`,
+    title: BrcEvent.name,
+    start: new Date(BrcEvent.date),
+    description: BrcEvent.info,
+    location: BrcEvent.location?.addressStreet1,
+    imageUrl,
+    committeeSlug: "brc",
+  };
+};

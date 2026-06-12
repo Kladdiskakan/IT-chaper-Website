@@ -20,6 +20,7 @@ const brcIntegration: CommitteeIntegration = {
       const eventsList = jsonResponse?.data?.eventsCustom || [];
 
       return eventsList
+        .filter((event: BrcEvent) => event.published === true)
         .map(mapBrcEvent)
     } catch (error) {
       console.error("Error listing BRC events", error);

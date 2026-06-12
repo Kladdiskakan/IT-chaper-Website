@@ -16,6 +16,7 @@ export type BrcEvent = {
   date: string;
   info: string; 
   location: BrcLocation;
+  published: boolean;
 };
 
 export const mapBrcEvent = (BrcEvent: BrcEvent): CalendarEvent => {

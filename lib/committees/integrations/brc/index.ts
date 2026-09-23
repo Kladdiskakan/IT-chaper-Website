@@ -12,7 +12,7 @@ const brcAuthHeaders = {
 const brcIntegration: CommitteeIntegration = {
   listEvents: async () => {
     try {
-      const res = await fetch(`${env.BRC_base_url}/rest/eventsCustom`, {
+      const res = await fetch(`${env.BRC_BASE_URL}/rest/eventsCustom`, {
         headers: brcAuthHeaders,
       });
 
@@ -29,7 +29,7 @@ const brcIntegration: CommitteeIntegration = {
   },
   getEvent: async (id: string) => {
     try {
-      const res = await fetch(`${env.BRC_base_url}/rest/eventsCustom`, {
+      const res = await fetch(`${env.BRC_BASE_URL}/rest/eventsCustom`, {
         headers: brcAuthHeaders,
       });
       const jsonResponse = await res.json();
